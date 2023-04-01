@@ -1,0 +1,140 @@
+/* Import Fonts*/
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+.body {
+    background-color: #d9edf8;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Button */
+.button {
+    background-color: #0081c9;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 70px;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 5px;
+}
+.button:hover {
+    box-shadow: 0 0 0 black;
+}
+
+.daftar {
+    box-shadow: 5px 5px 20px #0081c9;
+    color: white;
+}
+
+/* navbar */
+header {
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    height: 50px;
+    left: 0;
+    top: -30px;
+    width: 100%;
+    z-index: 11;
+    transition: all 0.1s ease-in-out;
+}
+.navbar {
+    height: 80px;
+    background-color: #abe0ffa9;
+    backdrop-filter: blur(3px);
+}
+ul {
+    position: absolute;
+    right: 0;
+    display: flex;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    background-color: rgba(0, 0, 0, 0);
+    margin-right: 50px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.active {
+    color: #0081c9;
+}
+
+/* section 1 */
+
+.text {
+    width: 500px;
+}
+
+.home-1 {
+    display: flex;
+    position: relative;
+    height: 80vh;
+    padding: 10%;
+}
+.home-1-teks {
+    width: 500px;
+}
+
+/* section 2 */
+.home-2 {
+    height: 60vh;
+    display: flex;
+    padding: 50px;
+    padding-top: 0;
+    align-items: center;
+    justify-content: center;
+}
+.cards {
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.circle {
+    background-color: #d9edf8;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 50px;
+}
+
+.card-text {
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+/* Section 3 */
+.home-3 {
+    position: relative;
+    height: 110vh;
+    padding: 5%;
+}
+.foto-content-2 {
+    width: 300px;
+}
+.content {
+    display: flex;
+}
+.sec-3 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.content-text {
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    padding-top: 80px;
+}
+.btn-sec-3 {
+    width: 250px;
+    color: white;
+}
