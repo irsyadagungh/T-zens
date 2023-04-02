@@ -16,7 +16,8 @@
         <h2 class="welcome">Welcome to T-Zens</h2>
         <p class="sign">SIGN UP</p>
         <div class="done">
-            <form action="" method="post">
+            <form action="/sign-up/add" method="post">
+                @csrf
                 <!-- Kolom 1 -->
                 <div class="kolom1">
                     <input class="depan" name="nim">
@@ -68,8 +69,8 @@
                     <img src="../assets/pics/duduk.png" alt="" width="200px" height="">
                 </div>
 
-                <button type="submit" class="button" onclick="window.location.href='done.html'" name="submit"
-                    value="submit">Daftar</button>
+                <input type="submit" class="button" onclick="window.location.href='done.html'" name="submit"
+                    value="Daftar">
 
                
             </form>

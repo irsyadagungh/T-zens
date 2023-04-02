@@ -25,7 +25,7 @@
         <li>Acara</li>
         <li>Organisasi</li>
         <li>Kontak</li>
-        <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up')}}'">Daftar</button></li>
+        <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up/view')}}'">Daftar</button></li>
        </ul>
     </nav>
   </header>
