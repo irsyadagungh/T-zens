@@ -43,19 +43,19 @@
 
     <section class="home-2">
         <div class="cards">
-          <div class="circle"></div>
+          <img src="/assets/pics/section2-1.png" alt="" class="circle">
           <p class="card-text"> Pemateri Bersertifikasi</p>
         </div>
         <div class="cards">
-          <div class="circle"></div>
+          <img src="/assets/pics/section2-2.png" alt="" class="circle">
           <p class="card-text"> Membuat Dirimu Berkembang</p>
         </div>
         <div class="cards">
-          <div class="circle"></div>
+          <img src="/assets/pics/section2-3.png" alt="" class="circle">
           <p class="card-text"> Pemateri Bersertifikasi</p>
         </div>
         <div class="cards">
-          <div class="circle"></div>
+          <img src="/assets/pics/section2-4.png" alt="" class="circle">
           <p class="card-text"> Mendapatkan Sertifikat</p>
         </div>
     </section>

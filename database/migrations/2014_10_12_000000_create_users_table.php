@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id('no');
             $table->string('nim');
             $table->string('username');
-            $table->string('name');
+            $table->string('nama');
             $table->string('prodi');
             $table->string('fakultas');
             $table->string('no_tlp');

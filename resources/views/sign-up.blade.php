@@ -18,6 +18,7 @@
         <div class="done">
             <form action="/sign-up/add" method="post">
                 @csrf
+                
                 <!-- Kolom 1 -->
                 <div class="kolom1">
                     <input class="depan" name="nim">
