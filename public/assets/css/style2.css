@@ -1,0 +1,241 @@
+:root {
+    --Background: #d8eefe;
+    --biru-tua: #094067;
+    --abu-abu: #5f6c7b;
+    --white: #fffffe;
+    --biru-muda: #3da9fc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--Background) url("/assets/pics/shape4.png");
+    background-repeat: no-repeat;
+    background-position: 100% 20%;
+    background-size: 38%;
+    height: 100vh;
+}
+
+.ellipse-23 {
+    height: 925px;
+    right: 0;
+    position: absolute;
+    top: 150px;
+    width: 50%;
+    height: 100vh;
+    margin-left: 55vh;
+}
+
+.inputan3 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 160px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
+.inputan4 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 235px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
+
+.kolom3 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 185px;
+    left: 60px;
+}
+
+.kolom4 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 260px;
+    left: 60px;
+}
+
+.checkbox {
+    width: 2000px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 500px;
+    left: 60px;
+    overflow: hidden;
+}
+
+.lisensi {
+    width: 2000px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    font-size: 12px;
+    top: 501px;
+    left: 80px;
+    overflow: hidden;
+}
+.lisensi2 {
+    width: 500px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    font-size: 12px;
+    top: 550px;
+    left: 60px;
+    overflow: hidden;
+}
+.memiliki {
+    width: 115px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    font-size: 12px;
+    top: 301px;
+    left: 555px;
+    overflow: hidden;
+}
+
+.memiliki2 {
+    width: 115px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    font-size: 12px;
+    top: 310px;
+    left: 60px;
+    overflow: hidden;
+}
+
+.img {
+    position: absolute;
+    bottom: 40px;
+    left: 565px;
+    height: 200px;
+    width: auto;
+}
+
+.class {
+    position: relative;
+    color: #3da9fc;
+}
+
+.tengah {
+    width: 145%;
+    height: 30px;
+}
+.bawah {
+    width: 145%;
+    height: 30px;
+}
+
+.button {
+    border: none;
+    color: white;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #3da9fc;
+    width: 150px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 390px;
+    left: 55px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px black;
+}
+
+.footer {
+    position: absolute;
+    top: 51vh;
+    left: 2vh;
+    font-size: 1;
+}
+
+.background {
+    background-color: white;
+    margin-bottom: 50%;
+    height: 85vh;
+    width: 50%;
+    position: absolute;
+    left: 15%;
+    top: 50px;
+    opacity: 90%;
+    border-radius: 20px;
+}
+
+.bg {
+    background-color: white;
+}
+
+.welcome {
+    text-align: center;
+    color: #3da9fc;
+}
+
+.input {
+    text-align: center;
+}
+
+.done .foter {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 100%;
+}
+.done1 {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 100%;
+}
+
+.sign {
+    text-align: center;
+    top: 50px;
+    margin-top: 10vh;
+}
+
+.bot {
+    position: absolute;
+}
+
+.mid {
+    text-align: center;
+}
+
+.bulet {
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    height: auto;
+}

@@ -12,16 +12,21 @@
 }
 
 body {
-    background-color: var(--Background);
-    height: 100vh;
+    background: var(--Background) url("/assets/pics/shape4.png");
+    background-repeat: no-repeat;
+    background-position: 100% 20%;
+    background-size: 38%;
+    height: 173vh;
 }
 
 .ellipse-23 {
     height: 925px;
-    left: 320px;
+    right: 0;
     position: absolute;
-    top: -50px;
-    width: 100%;
+    top: 150px;
+    width: 50%;
+    height: 100vh;
+    margin-left: 55vh;
 }
 
 .inputan {
@@ -72,6 +77,54 @@ body {
     opacity: 1;
     text-align: left;
 }
+.inputan5 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 515px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
+.inputan6 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 595px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
+.inputan7 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 670px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
+.inputan8 {
+    width: 100px;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 750px;
+    left: 60px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 12px;
+    opacity: 1;
+    text-align: left;
+}
 
 .kolom1 {
     width: 60%;
@@ -103,12 +156,40 @@ body {
     top: 460px;
     left: 60px;
 }
+.kolom5 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 540px;
+    left: 60px;
+}
+.kolom6 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 620px;
+    left: 60px;
+}
+.kolom7 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 695px;
+    left: 60px;
+}
+.kolom8 {
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 775px;
+    left: 60px;
+}
 
 .checkbox {
     width: 60%;
     height: 30px;
     position: absolute;
-    top: 501px;
+    top: 811px;
     left: 60px;
 }
 
@@ -116,7 +197,7 @@ body {
     width: 60%;
     height: 30px;
     position: absolute;
-    top: 501px;
+    top: 811px;
     left: 80px;
     font-size: 12px;
 }
@@ -125,14 +206,14 @@ body {
     height: 40px;
     position: absolute;
     font-size: 12px;
-    top: 550px;
+    top: 850px;
     left: 60px;
 }
 .memiliki {
     width: 60%;
     height: 30px;
     position: absolute;
-    top: 501px;
+    top: 811px;
     left: 555px;
     font-size: 12px;
 }
@@ -140,15 +221,13 @@ body {
     margin-top: -150px;
 }
 
+
 .img {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     position: absolute;
-    font-size: 12px;
-    top: 600px;
+    top: 900px;
     left: 565px;
-    overflow: hidden;
+    height: 200px;
+    width: auto;
 }
 
 .class {
@@ -172,25 +251,36 @@ body {
     width: 145%;
     height: 30px;
 }
+.bawah1 {
+    width: 145%;
+    height: 30px;
+}
+.bawah2 {
+    width: 145%;
+    height: 30px;
+}
+.bawah3 {
+    width: 145%;
+    height: 30px;
+}
+.bawah4 {
+    width: 145%;
+    height: 30px;
+}
 
 .button {
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 12px;
     margin: 4px 2px;
     cursor: pointer;
     background-color: #3da9fc;
     width: 150px;
     height: 40px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
     position: absolute;
-    top: 590px;
+    top: 890px;
     left: 55px;
     overflow: hidden;
     border-radius: 5px;
@@ -210,11 +300,14 @@ body {
 
 .background {
     background-color: white;
-    height: 123vh;
+    margin-bottom: 50%;
+    height: 160vh;
     width: 50%;
     position: absolute;
     left: 15%;
+    top: 50px;
     opacity: 90%;
+    border-radius: 20px;
 }
 
 .bg {
@@ -222,6 +315,7 @@ body {
 }
 
 .welcome {
+    margin-top: 30px;
     text-align: center;
     color: #3da9fc;
 }
@@ -245,8 +339,7 @@ body {
 
 .sign {
     text-align: center;
-    top: 50px;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .bot {
@@ -268,4 +361,11 @@ body {
     font-size: 12px;
     opacity: 1;
     text-align: left;
+}
+
+.bulet {
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    height: auto;
 }

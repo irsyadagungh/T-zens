@@ -10,17 +10,8 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id('no');
-            $table->string('nim');
-            $table->string('username');
-            $table->string('nama');
-            $table->string('prodi');
-            $table->string('fakultas');
-            $table->string('no_tlp');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
