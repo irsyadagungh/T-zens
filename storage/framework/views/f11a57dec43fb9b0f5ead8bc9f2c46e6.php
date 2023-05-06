@@ -22,7 +22,7 @@
                 <?php echo csrf_field(); ?>
                 <!-- Kolom 3 -->
                 <div class="kolom3">
-                    <input class="tengah">
+                    <input class="tengah" name="username" type="text">
                 </div>
                 <div class="inputan3">
                     <p>Email :</p>
@@ -30,7 +30,7 @@
 
                 <!-- Kolom 4 -->
                 <div class="kolom4">
-                    <input class="bawah">
+                    <input class="bawah" name="password" type="password">
                 </div>
                 <div class="inputan4">
                     <p>Password :</p>
@@ -45,7 +45,7 @@
                 </div>
 
 
-                <button class="button button2" onclick="window.location.href='<?php echo e(url('/')); ?>'">Masuk</button>
+                <button class="button button2" name="submit" type="submit">Masuk</button>
             </form>
 
         </div>

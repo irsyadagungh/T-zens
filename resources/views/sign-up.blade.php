@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/assets/css/style4.css">
-        <title>Tzens - Sign in</title>
-    </head>
-    
-    <body>
-        <!-- <img src="../assets/pics/shape4.png" alt="Ellipse 23" class="ellipse-23"> -->
-        <div class="background">
-            <img class="img" src="../assets/pics/duduk.png" alt="" width="200px" height="">
-            <div class="shape"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style4.css">
+    <title>Tzens - Sign in</title>
+</head>
+
+<body>
+    <!-- <img src="../assets/pics/shape4.png" alt="Ellipse 23" class="ellipse-23"> -->
+    <div class="background">
+        <img class="img" src="../assets/pics/duduk.png" alt="" width="200px" height="">
+        <div class="shape"></div>
         <h2 class="welcome">Welcome to T-Zens</h2>
         <p class="sign">SIGN UP</p>
         <div class="done">
@@ -105,13 +105,12 @@
                     <p><a href="/login/view"> Sudah memiliki Akun? </a></p>
                 </div>
                 <div class="lisensi2">
-                    <p class="policy">By clicking “Sign up” button, you are creating a T-Zens account, and you agree to T.Z ens <a
-                            href="">
+                    <p class="policy">By clicking “Sign up” button, you are creating a T-Zens account, and you agree to
+                        T.Z ens <a href="">
                             Terms of Use </a> and <a href=""> Privacy Policy.</a></p>
                 </div>
 
-                <input type="submit" class="button" onclick="window.location.href='{{ url('/login/view') }}'" name="submit"
-                    value="Daftar">
+                <input type="submit" class="button" name="submit" value="Daftar">
 
 
             </form>
