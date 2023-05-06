@@ -49,7 +49,7 @@
             yang Anda inginkan disini!</p>
             <p>Tersedia berbagai macam pilihan informasi yang tersedia didalamnya mengenai Acara, Event, dan Organisasi
             di dunia kampus Telkom University.</p>
-            <button class="button">Telusuri</button>
+            <a href="#3"> <button class="button" >Telusuri</button></a>
           </div>
           <div data-aos="fade-up" data-aos-duration="1800">
               <img class="foto1" src="/assets/pics/pic-landpage.png" alt="">
@@ -77,7 +77,7 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="home-3">
+    <section class="home-3" id="3">
       <div  class="content sec-3">
         <div data-aos="fade-up" data-aos-duration="1000" class="foto">
           <img class="foto-content-2" src="assets/pics/acara1.png" alt="">
@@ -86,7 +86,7 @@
           <h3>Belajar Fleksibel Ratusan Skill. Dapatkan Sertifikat.</h3>
           <p>Pilih skill apapun dan pelajari kapanpun. Dapatkan video materi terstruktur, modul praktik plus webinar series rancangan
           para experts dari top companies.</p>
-          <button class=" button btn-sec-3">Lihat Ratusan Acara</button>
+          <button class=" button btn-sec-3"  onclick="window.location.href='<?php echo e(url('/acara')); ?>'" >Lihat Ratusan Acara</button>
         </div>
       </div>
 
@@ -95,7 +95,7 @@
           <h3>Belajar Fleksibel Ratusan Skill. Dapatkan Sertifikat.</h3>
           <p>Pilih skill apapun dan pelajari kapanpun. Dapatkan video materi terstruktur, modul praktik plus webinar series rancangan
             para experts dari top companies.</p>
-            <button class=" button btn-sec-3">Lihat Ratusan Acara</button>
+            <button class=" button btn-sec-3"  onclick="window.location.href='<?php echo e(url('/organisasi')); ?>'">Lihat Ratusan Organisasi</button>
           </div>
           <div data-aos="fade-up" data-aos-duration="1250" class="foto">
             <img class="foto-content-2" src="assets/pics/acara1.png" alt="">
