@@ -86,7 +86,7 @@
           <h3>Belajar Fleksibel Ratusan Skill. Dapatkan Sertifikat.</h3>
           <p>Pilih skill apapun dan pelajari kapanpun. Dapatkan video materi terstruktur, modul praktik plus webinar series rancangan
           para experts dari top companies.</p>
-          <button class=" button btn-sec-3">Lihat Ratusan Acara</button>
+          <button class=" button btn-sec-3"  onclick="window.location.href='{{url('/acara')}}'" >Lihat Ratusan Acara</button>
         </div>
       </div>
 
@@ -95,7 +95,7 @@
           <h3>Belajar Fleksibel Ratusan Skill. Dapatkan Sertifikat.</h3>
           <p>Pilih skill apapun dan pelajari kapanpun. Dapatkan video materi terstruktur, modul praktik plus webinar series rancangan
             para experts dari top companies.</p>
-            <button class=" button btn-sec-3">Lihat Ratusan Acara</button>
+            <button class=" button btn-sec-3"  onclick="window.location.href='{{url('/organisasi')}}'">Lihat Ratusan Organisasi</button>
           </div>
           <div data-aos="fade-up" data-aos-duration="1250" class="foto">
             <img class="foto-content-2" src="assets/pics/acara1.png" alt="">
