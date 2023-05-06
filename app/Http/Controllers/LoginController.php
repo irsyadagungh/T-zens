@@ -49,6 +49,7 @@ class LoginController extends Controller
                 $message = "wrong answer";
                 echo "<script type='text/javascript'>alert('$message');</script>";
                 return redirect('/login/view');
+
             }
 
         }
