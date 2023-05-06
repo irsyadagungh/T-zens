@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
-
     public function add(Request $request)
     {
         // dd($request->except(["_token", "submit"]));
