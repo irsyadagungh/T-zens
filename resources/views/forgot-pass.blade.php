@@ -38,7 +38,7 @@
         <div class="back back2">
           <p>Don't have an account?</p>
         </div>
-        <button type="submit" class="signup" onclick="window.location.href='sign.php'" name="submit"
+        <button type="submit" class="signup" onclick="window.location.href='{{url('/sign-up')}}'" name="submit"
                     value="submit">Sign Up</button>
 
         <button type="submit" class="button" onclick="window.location.href='{{url('/forgot/login-forgot')}}'" name="submit"

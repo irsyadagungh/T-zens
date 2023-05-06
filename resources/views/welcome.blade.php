@@ -49,7 +49,7 @@
             yang Anda inginkan disini!</p>
             <p>Tersedia berbagai macam pilihan informasi yang tersedia didalamnya mengenai Acara, Event, dan Organisasi
             di dunia kampus Telkom University.</p>
-            <button class="button">Telusuri</button>
+            <a href="#3"> <button class="button" >Telusuri</button></a>
           </div>
           <div data-aos="fade-up" data-aos-duration="1800">
               <img class="foto1" src="/assets/pics/pic-landpage.png" alt="">
@@ -77,7 +77,7 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="home-3">
+    <section class="home-3" id="3">
       <div  class="content sec-3">
         <div data-aos="fade-up" data-aos-duration="1000" class="foto">
           <img class="foto-content-2" src="assets/pics/acara1.png" alt="">
