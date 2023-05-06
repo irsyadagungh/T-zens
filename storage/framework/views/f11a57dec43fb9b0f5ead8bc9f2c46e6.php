@@ -25,7 +25,7 @@
                     <input class="tengah" name="username" type="text">
                 </div>
                 <div class="inputan3">
-                    <p>Email :</p>
+                    <p>username :</p>
                 </div>
 
                 <!-- Kolom 4 -->
