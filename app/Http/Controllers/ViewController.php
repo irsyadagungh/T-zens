@@ -51,4 +51,9 @@ class ViewController extends Controller
     {
         return view('done');
     }
+
+    public function viewAdmin()
+    {
+        return view('admin');
+    }
 }

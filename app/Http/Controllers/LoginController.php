@@ -34,26 +34,34 @@ class LoginController extends Controller
         if (isset($_POST["submit"])) {
             $username = $_POST["username"];
             $password = $_POST["password"];
+            $query = "SELECT status FROM pengguna WHERE username = '$username'";
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
             if (mysqli_num_rows($result) == 1) {
               $row = mysqli_fetch_assoc($result);
               if ($password == $row["password"]) {
-                echo "<script>
-                alert('Kamu gk masuk');
-                window.location.href = '/';
-            </script>";
+                  $_SESSION ["stat"] = $row["status"];
+                  $result2 = mysqli_query($conn, $query);
+                if($_SESSION ["stat"] == 'admin'){
+                    return redirect('/dashboard/view');
+                     } else {
+                    echo "<script>
+                    alert('Kamu gk masuk');
+                        window.location.href = '/';
+                     </script>";
+
+                    }
+            } else {
+                    echo "<script>
+                        alert('Password salah!');
+                        window.location.href = '/login/view';
+                    </script>";
+                }
             } else {
                 echo "<script>
-                    alert('Password salah!');
+                    alert('Username salah!');
                     window.location.href = '/login/view';
                 </script>";
-            }
-        } else {
-            echo "<script>
-                alert('Username salah!');
-                window.location.href = '/login/view';
-            </script>";
-        }  
+            }  
     }
         
     }

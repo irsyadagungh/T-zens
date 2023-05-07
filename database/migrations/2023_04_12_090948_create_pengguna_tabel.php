@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('no_tlp');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('status');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
