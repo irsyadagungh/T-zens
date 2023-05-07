@@ -120,4 +120,4 @@
 </body>
 
 </html>
-a<?php /**PATH C:\xampp\htdocs\applications\T-zens\resources\views/sign-up.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\applications\T-zens\resources\views/sign-up.blade.php ENDPATH**/ ?>

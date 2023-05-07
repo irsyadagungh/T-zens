@@ -43,13 +43,7 @@ class LoginController extends Controller
                     return redirect('/');
                 }
             }
-
-            if ($user == null and $password == null) {
-                $message = "wrong answer";
-                echo "<script type='text/javascript'>alert('$message');</script>";
-                return redirect('/login/view');
-
-            }
+            return redirect('/login/view');
 
         }
     }
