@@ -26,16 +26,16 @@
                 <!-- Kolom 3 -->
                 <div class="user">
                     <p>username :</p>
-                    <input class="tengah" name="username" type="text">
+                    <input class="tengah" name="username" type="text" required>
                 </div>
 
                 <!-- Kolom 4 -->
                 <div class="pass">
                     <p>Password :</p>
                     <div class="p">
-                        <input class="bawah" name="password" type="password" id="pass">
-                    <i class="far fa-eye" id="mata"></i>
-                </div>
+                        <input class="bawah" name="password" type="password" id="pass" required>
+                        <i class="far fa-eye" id="mata"></i>
+                    </div>
                 </div>
 
                 <div class="memiliki2">
@@ -56,15 +56,22 @@
 
 <script>
     const togglePassword = document.querySelector('#mata');
-        const password = document.querySelector('#pass');
+    const password = document.querySelector('#pass');
 
-        togglePassword.addEventListener('click', function (e) {
-            // toggle the type attribute
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            // toggle the eye slash icon
-            this.classList.toggle('fa-eye-slash');
-        });
+    togglePassword.addEventListener('click', function(e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("username").required;
+        var x = document.getElementById("password").required;
+    }
 </script>
 
 </html>
