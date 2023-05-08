@@ -139,6 +139,11 @@ nav ul li .button:hover {
     display: flex;
 }
 
+.top{
+    background-color: #0081c9;
+}
+
+.sec-2 .search input{
 .sec-2 .search input {
     width: 100%;
     border: none;
