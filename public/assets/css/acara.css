@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-*{
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #d9edf8;
 }
 
@@ -22,12 +22,12 @@ button {
     font-size: 15px;
     padding: 5px;
 }
-button:hover{
+button:hover {
     box-shadow: 0 0 0 black;
 }
 
 /* NAVBAR */
-nav{
+nav {
     position: fixed;
     display: flex;
     justify-content: space-around;
@@ -39,7 +39,7 @@ nav{
     z-index: 1;
 }
 
-nav div{
+nav div {
     display: flex;
     width: 10%;
     justify-content: center;
@@ -53,7 +53,7 @@ nav h4 {
     letter-spacing: 1px;
 }
 
-nav img{
+nav img {
     width: 50px;
     height: fit-content;
     background: none;
@@ -79,7 +79,7 @@ nav ul li div {
     width: 100%;
 }
 
-nav ul li .button{
+nav ul li .button {
     border: none;
     width: 60px;
     height: 30px;
@@ -95,24 +95,23 @@ nav ul li .button:hover {
     box-shadow: 0 0 0 black;
 }
 
-
 /* SECTION 1 */
-.sec-1{
+.sec-1 {
     position: relative;
     display: flex;
     justify-content: space-around;
     padding-top: 50px;
 }
 
-.sec-1 .img h1{
+.sec-1 .img h1 {
     margin-top: 50px;
 }
-.sec-1 .img img{
+.sec-1 .img img {
     width: 400px;
     height: auto;
 }
 
-.sec-1 .teks{
+.sec-1 .teks {
     margin: auto 0;
     width: 50%;
     display: flex;
@@ -121,7 +120,7 @@ nav ul li .button:hover {
     gap: 20px;
 }
 
-.sec-1 div h1{
+.sec-1 div h1 {
     font-weight: bold;
 }
 
@@ -140,14 +139,14 @@ nav ul li .button:hover {
     display: flex;
 }
 
-.sec-2 .search input{
+.sec-2 .search input {
     width: 100%;
     border: none;
     cursor: text;
 }
 
 /* Section 3 */
-.sec-3{
+.sec-3 {
     width: 90%;
     height: fit-content;
     margin: 20px 100px;
@@ -155,7 +154,7 @@ nav ul li .button:hover {
     flex-wrap: wrap;
 }
 
-.sec-3 .card{
+.sec-3 .card {
     background-color: white;
     width: 13%;
     height: 350px;
@@ -164,51 +163,51 @@ nav ul li .button:hover {
     flex-direction: column;
     gap: 10px;
     box-shadow: 6px 5px 12px -3px rgba(0, 0, 0, 0.45);
-        -webkit-box-shadow: 6px 5px 12px -3px rgba(0, 0, 0, 0.45);
-        -moz-box-shadow: 6px 5px 12px -3px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 6px 5px 12px -3px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 6px 5px 12px -3px rgba(0, 0, 0, 0.45);
 }
 
-.sec-3 .card img{
+.sec-3 .card .img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.sec-3 .card .teks{
+.sec-3 .card .teks {
     background: none;
     padding: 5px;
 }
 
-.sec-3 .card .teks h5{
+.sec-3 .card .teks h5 {
     background: none;
     font-size: 0.7em;
 }
 
-.sec-3 .card .teks .content-1{
+.sec-3 .card .teks .content-1 {
     background: none;
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
 }
 
-.sec-3 .card .teks .content-1 p{
+.sec-3 .card .teks .content-1 p {
     font-size: 0.8em;
     background: none;
 }
 
-.sec-3 .card .teks .content-2{
+.sec-3 .card .teks .content-2 {
     background: none;
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.sec-3 .card .teks .content-2 p{
+.sec-3 .card .teks .content-2 p {
     font-size: 0.8em;
     background: none;
 }
 
-.sec-3 .card .teks .content-2 .type{
+.sec-3 .card .teks .content-2 .type {
     background-color: rgba(79, 79, 79, 0.427);
     border-radius: 3px;
     padding: 2px 3px;
