@@ -43,7 +43,7 @@
 
                 Periode pendaftaran & pengumpulan berkas :  24 Februari - 5 Maret 2023
                 Link Pendaftaran: lynk.id/bemtelu</p>
-                <button class="btn" onclick="window.location.href='hal-organisasi.html'">Lihat</button>
+                <button class="btn" onclick="window.location.href='<?php echo e(url('/organisasi/detil-organisasi')); ?>'">Lihat</button>
             </div>
             <img src="/assets/pics/BEM.png"  alt="" class="foto1">
         </div>

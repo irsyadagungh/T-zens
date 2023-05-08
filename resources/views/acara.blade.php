@@ -57,20 +57,52 @@
     </section>
 
     <section class="sec-3" id="acara">
-      <div class="card" onclick="window.location.href='{{url('/acara/detil-acara')}}'">
-        <img src="/assets/pics/extra-artdinary.png" alt="">
-        <div class="teks">
-            <h5>Extra Artdinary</h5>
-            <div class="content-1">
-                <p>waktu</p>
-                <p>15 Februari 2000</p>
-            </div>
-            <div class="content-2">
-                <p class="type">Online</p>
-                <p>Free</p>
+
+    <?php
+     session_start();
+
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "tzens";
+
+        $conn = mysqli_connect($server, $username, $password, $database);
+
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $query = "SELECT * FROM acara";
+        $result = mysqli_query($conn, $query);
+
+
+
+        while ($acara = mysqli_fetch_array($result)) {
+            $foto = $acara['foto'];
+            $nama = $acara['nama'];
+
+            echo '<div class="img">
+                '.$acara["foto"].'
+            </div>';
+        ?>
+        <div class="card" onclick="window.location.href='{{url('/acara/detil-acara')}}'">
+
+            <div class="teks">
+                <h5><? echo "$nama"?></h5>
+                <div class="content-1">
+                    <p>waktu</p>
+                    <p>15 Februari 2000</p>
+                </div>
+                <div class="content-2">
+                    <p class="type">Online</p>
+                    <p>Free</p>
+                </div>
             </div>
         </div>
-      </div>
+<?php
+        }
+?>
+
     </section>
 
     <script src="" async defer></script>
