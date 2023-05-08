@@ -56,4 +56,9 @@ class ViewController extends Controller
     {
         return view('admin');
     }
+
+    public function viewContact()
+    {
+        return view('contact');
+    }
 }
