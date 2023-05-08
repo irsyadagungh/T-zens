@@ -36,21 +36,26 @@ class LoginController extends Controller
             $password = $_POST["password"];
             $query = "SELECT status FROM pengguna WHERE username = '$username'";
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
-            if (mysqli_num_rows($result) == 1) {
-              $row = mysqli_fetch_assoc($result);
-              if ($password == $row["password"]) {
-                  $_SESSION ["stat"] = $row["status"];
-                  $result2 = mysqli_query($conn, $query);
-                if($_SESSION ["stat"] == 'admin'){
-                    return redirect('/dashboard/view');
-                     } else {
-                    echo "<script>
+            if ($username == null and $pass == null) {
+                echo "<script>
+                        alert('Username dan Password kosong!');
+                        window.location.href = '/login/view';
+                    </script>";
+            } else if (mysqli_num_rows($result) == 1) {
+                $row = mysqli_fetch_assoc($result);
+                if ($password == $row["password"]) {
+                    $_SESSION["stat"] = $row["status"];
+                    $result2 = mysqli_query($conn, $query);
+                    if ($_SESSION["stat"] == 'admin') {
+                        return redirect('/dashboard/view');
+                    } else {
+                        echo "<script>
                     alert('Kamu gk masuk');
                         window.location.href = '/';
                      </script>";
 
                     }
-            } else {
+                } else {
                     echo "<script>
                         alert('Password salah!');
                         window.location.href = '/login/view';
@@ -61,9 +66,9 @@ class LoginController extends Controller
                     alert('Username salah!');
                     window.location.href = '/login/view';
                 </script>";
-            }  
-    }
-        
+            }
+        }
+
     }
 }
 ?>
