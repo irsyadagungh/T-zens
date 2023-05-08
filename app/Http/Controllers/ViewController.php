@@ -56,4 +56,5 @@ class ViewController extends Controller
     {
         return view('admin');
     }
+    
 }
