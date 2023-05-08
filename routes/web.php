@@ -45,3 +45,7 @@ Route::get('/acara/detil-acara', [ViewController::class, 'viewDetilAcara']);
 Route::get('/dashboard/view', [ViewController::class, 'viewAdmin']);
 
 Route::get('/kontak',[ViewController::class, 'viewContact']);
+
+Route::get('/admin/viewAcara', [ViewController::class, 'viewAdminAcara']);
+
+Route::get('/admin/viewAcara/edit', [ViewController::class, 'viewAdminAcaraEdit']);

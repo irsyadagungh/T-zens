@@ -61,4 +61,13 @@ class ViewController extends Controller
     {
         return view('contact');
     }
+
+    public function viewAdminAcara()
+    {
+        return view('admin-acara');
+    }
+    public function viewAdminAcaraEdit()
+    {
+        return view('acara-edit');
+    }
 }

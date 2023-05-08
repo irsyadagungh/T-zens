@@ -8,7 +8,53 @@
     <title>Document</title>
 </head>
 <body>
+
     <section class="2">
+        <div class="data">
+            <div class="1">
+                <div class="namaAcara">
+                    <label for="">Nama Acara</label>
+                    <input type="text">
+                </div>
+                <div class="Waktu">
+                    <label for="">Waktu</label>
+                    <input type="date">
+                    <input type="time">
+                </div>
+                <div class="Deskripsi">
+                    <label for="">Deskripsi</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="tipeAcara">
+                    <label for="">Tipe Acara</label>
+                    <select name="" id="">
+                        <option value="" selected disabled>Pilih Tipe Acara</option>
+                        <option value="online">Online</option>
+                        <option value="Offline">Offline</option>
+                    </select>
+                </div>
+                <div class="namaAcara">
+                    <label for="">Nama Acara</label>
+                    <input type="text">
+                </div>
+                <div class="Benefit">
+                    <label for="">Benefit</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="2">
+                <!-- subscription -->
+                <div class="subscription">
+                    <label for="">Subscribe</label>
+                    <select name="" id="">
+                        <option value="" selected disabled> Subscribe </option>
+                        <option value="online">Gratis</option>
+                        <option value="Offline">Pembayaran</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
         <div class="upload">
             <h2>Upload Foto</h2>
             <input type="file">

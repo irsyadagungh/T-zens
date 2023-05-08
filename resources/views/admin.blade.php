@@ -13,7 +13,7 @@
     <div class="sidebar">
       <ul>
             <li><a href="#"><i class="fas fa-blog"></i>Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-address-book"></i>Acara</a></li>
+            <li><a href="{{url('/admin/viewAcara/edit')}}"><i class="fas fa-address-book"></i>Acara</a></li>
             <li><a href="#"><i class="fas fa-map-pin"></i>Organisasi</a></li>
         </ul> 
     </div>
