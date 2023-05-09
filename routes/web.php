@@ -46,7 +46,10 @@ Route::get('/dashboard/view', [ViewController::class, 'viewAdmin']);
 
 Route::get('/kontak', [ViewController::class, 'viewContact']);
 Route::get('/kontak',[ViewController::class, 'viewContact']);
-
 Route::get('/admin/viewAcara', [ViewController::class, 'viewAdminAcara']);
 
 Route::get('/admin/viewAcara/edit', [ViewController::class, 'viewAdminAcaraEdit']);
+Route::get('/admin/viewOrganisasi', [ViewController::class, 'viewAdminOrganisasi']);
+
+Route::get('/admin/viewOrganisasi/edit', [ViewController::class, 'viewAdminOrganisasiEdit']);
+

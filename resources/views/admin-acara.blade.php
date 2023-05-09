@@ -5,9 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/admin-acara.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="sidebar">
+          <ul>
+                <li><a href="{{url('/dashboard/view')}}"><i class="fas fa-blog"></i>Dashboard</a></li>
+                <li><a href=""><i class="fas fa-address-book"></i>Acara</a></li>
+                <li><a href="{{url('/admin/viewOrganisasi')}}"><i class="fas fa-map-pin"></i>Organisasi</a></li>
+            </ul> 
+        </div>
+
+        <!-- ATAS -->
+        <div class="main_content">
+            <div class="header">
+                <div class="search">
+                    <span class="material-symbols-outlined" class="sea">
+                        search
+                        </span>
+                    <input type="search" placeholder="search" class="search2">
+                  </div>
+                <div class="profile">
+                 <img src="/assets/pics/profile.png" alt="">
+                 <div class="text">
+                 <h4>Mielola</h4>
+                 <p>Super Admin</p>
+               </div>
+                </div>
+               </div>
+
+            <!-- TENGAH -->
+            <div class="content">
+                <div class="filter">
+                    <div class="kiri">
+                    <h5>Acara</h5>
+                    <p>Perbarui disini !</p>
+                </div>
+                </div>
+            <div class="kolom">
+                <img src="" alt="" class="gmbr1" name="foto organisasi">    
+                <div class="isi">
+                <h3 class="cont" name="judul"> Extra Artdinary STIKOM Surabaya </a> </h3>
+                <p>Acara Pameran Tugas Akhir Mahasiswa Prodi DKV STIKOM Surabaya</p>
+                </div>
+                <div class="like">
+                    <button class="lihat">Lihat</button>
+                    <button class="edit">Edit</button>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="upload">
+        <button class="btn-floating" onclick="window.location.href='{{url('/admin/viewAcara/edit')}}'">
+            +
+            <span>Upload</span>
+        </button>
+    </div>
 </body>
 </html>
