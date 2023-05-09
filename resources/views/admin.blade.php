@@ -18,6 +18,7 @@
             <li><a href="{{url('/admin/viewOrganisasi')}}"><i class="fas fa-map-pin"></i>Organisasi</a></li>
         </ul> 
     </div>
+    
     <div class="main_content">
         <div class="header">
         <div class="search">
