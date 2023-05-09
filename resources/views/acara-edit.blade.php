@@ -84,8 +84,8 @@
                             <label for="">Subscribe</label>
                             <select name="subscribe" id="">
                                 <option value="" selected disabled> Subscribe </option>
-                                <option value="online">Gratis</option>
-                                <option value="Offline">Pembayaran</option>
+                                <option value="Free">Gratis</option>
+                                <option value="Pay">Pembayaran</option>
                             </select>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                             <label for="">Tanggal</label>
                             <input type="date" name="tanggal">
                             <label for="">Waktu</label>
-                            <input type="time" name="waktu">
+                            <input type="time" name="jam">
                         </div>
                         <div class="upload">
                             <h5>Unggah file</h5>

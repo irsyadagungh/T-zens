@@ -73,14 +73,15 @@ class AdminController extends Controller
             $targetFile = $targetDir . $gambar;
             move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFile);
 
-            $waktu = $_POST['waktu'];
+            $waktu = $_POST['tanggal'];
+            $jam = $_POST['jam'];
             $deskripsi = $_POST['deskripsi'];
             $tipeAcara = $_POST['tipe_acara'];
             $benefit = $_POST['benefit'];
             $subs = $_POST['subscribe'];
 
-            $result = mysqli_query($conn, "INSERT INTO `acara` (`id`, `nama`, `foto`, `waktu`, `deskripsi`, `tipe_acara`, `benefit`, `subscription`, `created_at`, `updated_at`)
-          VALUES (NULL, '$nama', '$gambar', '$waktu', '$deskripsi', '$tipeAcara', '$benefit', '$subs', NULL, NULL)");
+            $result = mysqli_query($conn, "INSERT INTO `acara` (`id`, `nama`, `foto`, `waktu`, `jam`, `deskripsi`, `tipe_acara`, `benefit`, `subscription`, `created_at`, `updated_at`)
+          VALUES (NULL, '$nama', '$gambar', '$waktu', '$jam', '$deskripsi', '$tipeAcara', '$benefit', '$subs', NULL, NULL)");
 
             if ($result) {
                 return redirect('/admin/viewAcara');
