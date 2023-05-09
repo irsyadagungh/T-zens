@@ -222,6 +222,7 @@ from .icon{
   }
   
   .search2{
+    outline: none;
     background: none;
     display: flex;
     justify-content: start;
@@ -230,3 +231,5 @@ from .icon{
     border: none;
     border-radius: 10px;
   }
+
+  

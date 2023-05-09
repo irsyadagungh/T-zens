@@ -139,6 +139,10 @@ nav ul li .button:hover {
     display: flex;
 }
 
+.search-2{
+    outline: none;
+}
+
 .top{
     background-color: #0081c9;
 }

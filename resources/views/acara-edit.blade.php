@@ -90,6 +90,7 @@
                         </div>
                     </div>
                     <div class="dua">
+
                         <div class="waktu">
                             <label for="">Tanggal</label>
                             <input type="date" name="tanggal">
