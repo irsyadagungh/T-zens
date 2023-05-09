@@ -51,7 +51,7 @@
           search
         </span>
 
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" class="search-2">
 
       </div>
     </section>

@@ -125,6 +125,7 @@ body{
 }
 
 .search2{
+  outline: none;
   background: none;
   display: flex;
   justify-content: start;
