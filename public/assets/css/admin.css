@@ -92,6 +92,18 @@ body {
     margin-bottom: 20px;
 }
 
+
+
+.box-1{
+ width: 150vh;
+ height: 50vh;
+ margin-left: 100px;
+ background-repeat: no-repeat;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-image: url('/assets/pics/box1.png');
+ color: white;
 .box-1 {
     width: 150vh;
     height: 50vh;
