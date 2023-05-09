@@ -87,6 +87,7 @@
                         </div>
                     </div>
                     <div class="dua">
+                        
                         <div class="waktu">
                             <label for="">Tanggal</label>
                             <input type="date">
@@ -98,7 +99,7 @@
                         </div>
                         <div class="form2">
                             <i class="fa-regular fa-cloud-arrow-up" style="color: #0081c9;"></i>
-                            <input type="file" value="upload-foto" class="uploadFoto" hidden>
+                            <input type="file" value="upload-foto" class="uploadFoto" hidden id="upload-button" accept="image/*">
                         </div>
                         <input type="submit" class="upload kursor">
                     </div>
@@ -113,6 +114,9 @@
             form.addEventListener("click", () => {
                 fileinput.click();
             });
+            
+            
+            
         </script>
 </body>
 
