@@ -1,0 +1,124 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Portofolio;
+use App\Models\Client;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StorePortofolioRequest;
+use App\Http\Requests\UpdatePortofolioRequest;
+
+class PortofolioController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('cms.cms-portofolios.index', [
+            'portofolios' => DB::table('portofolios')->paginate(4),
+            'title' => 'Portofolios'
+        ]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function create()
+    {
+        return view('cms.cms-portofolios.create', [
+            'title' => 'Create Portofolio'
+        ]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StorePortofolioRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StorePortofolioRequest $request)
+    {
+        $ValidatedData = $request->validate([
+            'name' => 'required|regex:/^[a-zA-Z ]+$/',
+            'title' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+            'featured' => 'required',
+            'picture' => 'image|file|max:2048',
+        ]);
+        if ($request->file('picture')) {
+            $ValidatedData['picture'] = $request->file('picture')->store('/picture-portofolio');
+        }
+
+        Portofolio::create($ValidatedData);
+        return redirect('/portofolios')->with('add', 'your data have been added');
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Portofolio  $portofolio
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $test = DB::table('portofolios')->where('id', $id)->get();
+        return view('cms.cms-portofolios.update', [
+            'portofolio' => $test[0],
+            'title' => 'Edit Portofolio'
+        ]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdatePortofolioRequest  $request
+     * @param  \App\Models\Portofolio  $portofolio
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdatePortofolioRequest $request, $id)
+    {
+        $ValidatedData = $request->validate([
+            'name' => 'required|regex:/^[a-zA-Z ]+$/',
+            'title' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+            'featured' => 'required',
+            'picture' => 'image|file|max:2048',
+        ]);
+
+        if ($request->file('picture')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $ValidatedData['picture'] = $request->file('picture')->store('/picture-portofolio');
+        }
+
+        Portofolio::where('id', $id)->update($ValidatedData);
+
+        return redirect('/portofolios')->with('update', 'your data have been updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Portofolio  $portofolio
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $test = DB::table('portofolios')->select('picture')
+            ->where('id', $id)
+            ->get();
+        if ($test[0]->picture) {
+            Storage::delete($test[0]->picture);
+        }
+        Portofolio::destroy($id);
+        return redirect('/portofolios')->with('delete', 'your data have been deleted');
+    }
+}

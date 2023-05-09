@@ -5,6 +5,7 @@
 	<title>Side Navigation Bar</title>
 	<link rel="stylesheet" href="/assets/css/admin.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
@@ -13,14 +14,25 @@
     <div class="sidebar">
       <ul>
             <li><a href="#"><i class="fas fa-blog"></i>Dashboard</a></li>
-            <li><a href="{{url('/admin/viewAcara/edit')}}"><i class="fas fa-address-book"></i>Acara</a></li>
-            <li><a href="#"><i class="fas fa-map-pin"></i>Organisasi</a></li>
+            <li><a href="{{url('/admin/viewAcara')}}"><i class="fas fa-address-book"></i>Acara</a></li>
+            <li><a href="{{url('/admin/viewOrganisasi')}}"><i class="fas fa-map-pin"></i>Organisasi</a></li>
         </ul> 
     </div>
     <div class="main_content">
         <div class="header">
+        <div class="search">
+                    <span class="material-symbols-outlined" class="sea">
+                        search
+                        </span>
+                    <input type="search" placeholder="search" class="search2">
+                  </div>
+         <div class="profile">
           <img src="/assets/pics/profile.png" alt="">
-        <p name="adminUser">Mielola</p>
+          <div class="text">
+          <h4>Mielola</h4>
+          <p>Super Admin</p>
+        </div>
+         </div>
         </div>
         <div class="info">
           <div class="box-1">
