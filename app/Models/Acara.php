@@ -9,4 +9,5 @@ class Acara extends Model
 {
     use HasFactory;
     protected $table = 'acara';
+    protected $guarded = [];
 }

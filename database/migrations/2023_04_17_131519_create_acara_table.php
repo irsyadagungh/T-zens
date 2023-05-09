@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('acara', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->binary('foto');
+            $table->string('foto');
             $table->timestamp('waktu');
             $table->string('deskripsi');
             $table->string('tipe_acara');

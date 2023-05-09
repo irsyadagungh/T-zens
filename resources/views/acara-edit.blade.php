@@ -50,24 +50,27 @@
                 </div>
             </div>
 
+
+
             <!-- TENGAH -->
             <div class="judul">
                 <h3>Acara/Edit</h3>
             </div>
             <section class="bungkus">
-                <form action="" method="post" enctype="multipart/form-data" class="form">
+                <form action="/admin/viewAcara/edit/create" method="post" enctype="multipart/form-data" class="form">
+                    @csrf
                     <div class="satu">
                         <div class="namaAcara">
                             <label for="">Nama Acara</label>
-                            <input type="text" class="inputan">
+                            <input type="text" class="inputan" name="nama">
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="" id="" cols="30" rows="10" class="inputan"></textarea>
+                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan"></textarea>
                         </div>
                         <div class="tipeAcara">
                             <label for="">Tipe Acara</label>
-                            <select name="" id="">
+                            <select name="tipe_acara" id="">
                                 <option value="" selected disabled>Pilih Tipe Acara</option>
                                 <option value="online">Online</option>
                                 <option value="Offline">Offline</option>
@@ -75,11 +78,11 @@
                         </div>
                         <div class="Benefit">
                             <label for="">Benefit</label>
-                            <textarea name="" id="" cols="30" rows="10" class="inputan"></textarea>
+                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan"></textarea>
                         </div>
                         <div class="subscription">
                             <label for="">Subscribe</label>
-                            <select name="" id="">
+                            <select name="subscribe" id="">
                                 <option value="" selected disabled> Subscribe </option>
                                 <option value="online">Gratis</option>
                                 <option value="Offline">Pembayaran</option>
@@ -89,18 +92,18 @@
                     <div class="dua">
                         <div class="waktu">
                             <label for="">Tanggal</label>
-                            <input type="date">
+                            <input type="date" name="tanggal">
                             <label for="">Waktu</label>
-                            <input type="time">
+                            <input type="time" name="waktu">
                         </div>
                         <div class="upload">
                             <h5>Unggah file</h5>
                         </div>
                         <div class="form2">
                             <i class="fa-regular fa-cloud-arrow-up" style="color: #0081c9;"></i>
-                            <input type="file" value="upload-foto" class="uploadFoto" hidden>
+                            <input type="file" value="upload-foto" class="uploadFoto" name="foto" hidden>
                         </div>
-                        <input type="submit" class="upload kursor">
+                        <input type="submit" class="upload kursor" name="submit">
                     </div>
 
         </div>
