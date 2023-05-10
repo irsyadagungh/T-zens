@@ -13,8 +13,9 @@ body {
     width: 100%;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
     border: none;
+    border-radius: 5px;
+    position: relative;
 }
 
 .satu{
@@ -156,6 +157,7 @@ body {
     flex-direction: column;
     gap: 10px;
     margin-right: 100px;
+    
 }
 
 .data {
@@ -202,16 +204,7 @@ textarea {
     justify-content: space-evenly;
 }
 
-.form2 {
-    border-radius: 10px;
-    width: 100%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-}
+
 
 form :where(.icon) {
     color: #0081c9;
@@ -245,4 +238,48 @@ from .icon {
     height: 50px;
     border: none;
     border-radius: 10px;
+}
+
+/* ISI FOTO */
+
+.row-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1  0px;
+    height: 100%;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.form2{
+    background-color: white;
+    height: 60%;
+    border-radius: 10px;
+}
+
+.image-container{
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+#chosen-image{
+    margin: auto;
+    z-index: 1;
+}
+
+figcaption{
+    margin: 20px 0 30px 0;
+    text-align: center;
+    color: #2a292a;
+}
+
+.iconn{
+   width: 100px;
+   height: auto;
+   margin: auto;
+   position: absolute;
+   top: 450px;
+    
 }
