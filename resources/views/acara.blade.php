@@ -75,29 +75,34 @@
             }
             
             $query = mysqli_query($conn, 'SELECT * FROM acara');
-            $acara = mysqli_fetch_all($query, MYSQLI_ASSOC);
+            $acara = mysqli_fetch_assoc($query);
+            @endphp
             
-            print_r($acara);
-        @endphp
+            <?php
+            $acara = mysqli_fetch_assoc($query);
+            ?>
 
-        @foreach ($acara as $value)
+            <?php while ($acara = mysqli_fetch_assoc($query)):
+            
+            $foto = "/assets/pictures/".$acara['foto'];
+?>
             <div class="card" onclick="window.location.href='{{ url('/acara/detil-acara') }}'">
-                <img src="/assets/pics/"{{ $value['foto'] }}>
+            <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="Foto" />
                 <div class="teks">
                     <h5>
-                        {{ $value['nama'] }}
+                        {{ $acara['nama'] }}
                     </h5>
                     <div class="content-1">
                         <p>waktu</p>
-                        <p>{{ $value['waktu'] }}</p>
+                        <p>{{ $acara['waktu'] }}</p>
                     </div>
                     <div class="content-2">
-                        <p class="type">{{ $value['tipe_acara'] }}</p>
-                        <p>{{ $value['subscription'] }}</p>
+                        <p class="type">{{ $acara['tipe_acara'] }}</p>
+                        <p>{{ $acara['subscription'] }}</p>
                     </div>
                 </div>
             </div>
-        @endforeach
+        <?php endwhile; ?>
     </section>
 
     <script src="" async defer></script>
