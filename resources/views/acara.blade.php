@@ -76,32 +76,33 @@
             
             $query = mysqli_query($conn, 'SELECT * FROM acara');
             $acara = mysqli_fetch_assoc($query);
-            @endphp
-            
-            <?php
-            $acara = mysqli_fetch_assoc($query);
-            ?>
+        @endphp
 
-            <?php while ($acara = mysqli_fetch_assoc($query)):
-            
+        <?php
+        $acara = mysqli_fetch_assoc($query);
+        ?>
+
+        <?php while ($acara = mysqli_fetch_assoc($query)):
+
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-            <div class="card" onclick="window.location.href='{{ url('/acara/detil-acara') }}'">
+        <div class="card" onclick="window.location.href='{{ url('/acara/detil-acara') }}'">
             <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="Foto" />
-                <div class="teks">
-                    <h5>
-                        {{ $acara['nama'] }}
-                    </h5>
-                    <div class="content-1">
-                        <p>waktu</p>
-                        <p>{{ $acara['waktu'] }}</p>
-                    </div>
-                    <div class="content-2">
-                        <p class="type">{{ $acara['tipe_acara'] }}</p>
-                        <p>{{ $acara['subscription'] }}</p>
-                    </div>
+            <div class="teks">
+                <h5>
+                    {{ $acara['nama'] }}
+                </h5>
+                <div class="content-1">
+                    <p>waktu</p>
+                    <p>{{ $acara['waktu'] }}</p>
+                </div>
+                <div class="content-2">
+                    <p class="type">{{ $acara['tipe_acara'] }}</p>
+
+                    <p>{{ $acara['subscription'] }}</p>
                 </div>
             </div>
+        </div>
         <?php endwhile; ?>
     </section>
 
