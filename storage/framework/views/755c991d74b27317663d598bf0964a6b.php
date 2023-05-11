@@ -76,7 +76,7 @@
 
                 <div class="kolom">
                     <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
-                        name="foto">
+                        name="foto organisasi">
                     <div class="isi">
                         <h3 class="cont" name="judul"> <?php echo e($organisasi['nama']); ?> </a> </h3>
                         <p><?php echo e($organisasi['deskripsi']); ?>3</p>
