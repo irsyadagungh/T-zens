@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function create()
+    public function createAcara()
     {
         session_start();
 
