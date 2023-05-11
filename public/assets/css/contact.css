@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+}
+body {
+    height: 100%;
+    background: url("/assets/pics/background-contact.png");
+}
+.contact {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+
+    background: #d0eeff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main-shape {
+    position: absolute;
+    width: 1303px;
+    height: 844px;
+    left: 67px;
+    top: 75px;
+
+    background: rgba(246, 246, 246, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(50px);
+
+    border-radius: 31px;
+}
+
+.logo {
+    position: absolute;
+    width: 163px;
+    height: 76px;
+    left: 84px;
+    top: 133px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 10px;
+    position: absolute;
+    width: 61px;
+    height: 27px;
+    left: 719px;
+    top: 144px;
+    font-family: "Inter";
+}
+
+li {
+    margin-left: 40px;
+}
+
+.button {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 1150px;
+    top: 365px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #0081c9;
+    width: 100px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: -220px;
+}
+.tim {
+    position: absolute;
+    width: 570px;
+    height: 88px;
+    left: 116px;
+    top: 243px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 77px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #094067;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ayo {
+    position: absolute;
+    width: 439px;
+    height: 36px;
+    left: 120px;
+    top: 331px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.6);
+
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.desc {
+    position: absolute;
+    width: 507px;
+    height: 143px;
+    left: 120px;
+    top: 382px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.medsos {
+    position: absolute;
+    width: 152px;
+    height: 34px;
+    left: 120px;
+    top: 625px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #0081c9;
+}
+
+.telp {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 120px;
+    top: 688px;
+}
+.browse {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 120px;
+    top: 721px;
+}
+.instagram {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 120px;
+    top: 754px;
+}
+.e-mail {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 120px;
+    top: 787px;
+}
+
+.no-telp {
+    position: absolute;
+    width: 141px;
+    height: 24px;
+    left: 164px;
+    top: 690px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.name-brows {
+    position: absolute;
+    width: 151px;
+    height: 24px;
+    left: 164px;
+    top: 723px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.uname-inst {
+    position: absolute;
+    width: 142px;
+    height: 24px;
+    left: 164px;
+    top: 756px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.alamat-email {
+    position: absolute;
+    width: 195px;
+    height: 24px;
+    left: 164px;
+    top: 789px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+.our-lives {
+    position: absolute;
+    width: 436px;
+    height: 200px;
+    left: 568px;
+    top: 600px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+}
+.icon-lives {
+    position: absolute;
+    width: 97px;
+    height: 97px;
+    left: 12px;
+    top: 54px;
+}
+
+.judul-lives {
+    position: absolute;
+    width: 117px;
+    height: 36px;
+    left: 122px;
+    top: 21px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.isi-lives {
+    position: absolute;
+    width: 267px;
+    height: 54px;
+    left: 122px;
+    top: 73px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.full-details {
+    position: absolute;
+    width: 77px;
+    height: 18px;
+    left: 324px;
+    top: 161px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #0081c9;
+    border: 5px solid #0081c9;
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.news {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    left: 1030px;
+    top: 602px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.judul-news {
+    position: absolute;
+    width: 86px;
+    height: 30px;
+    left: 21px;
+    top: 6px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #0081c9;
+}
+.acara-baru {
+    position: absolute;
+    width: 160px;
+    height: 36px;
+    left: 21px;
+    top: 32px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+.isi-news {
+    position: absolute;
+    width: 194px;
+    height: 54px;
+    left: 21px;
+    top: 82px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+.material-symbols-outlined {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 200px;
+    top: 160px;
+    font-size: 32px;
+}
+.wildan {
+    position: absolute;
+    width: 188.71px;
+    height: 188.64px;
+    left: 792px;
+    top: 348px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.irsyad {
+    position: absolute;
+    width: 188.71px;
+    height: 188.64px;
+    left: 898px;
+    top: 239px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.martin {
+    position: absolute;
+    width: 188.71px;
+    height: 188.64px;
+    left: 1002px;
+    top: 349px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
