@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/acaraEdit.css">
+    <link rel="stylesheet" href="/assets/css/upload-admin-organisasi.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/322f056c55.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
@@ -122,6 +122,20 @@
                     fileinput.click();
                 });
             </script>
+            <script>
+            let uploadButton = document.getElementById("pilih");
+            let chosenImage = document.getElementById("chosen-image");
+            let fileName = document.getElementById("file-name");
+
+            uploadButton.onchange = () => {
+            let reader = new FileReader();
+            reader.readAsDataURL(uploadButton.files[0]);
+            reader.onload = () => {
+            chosenImage.setAttribute("src",reader.result);
+    }
+            fileName.textContent = uploadButton.files[0].name;
+}
+        </script>
 </body>
 
 </html>
