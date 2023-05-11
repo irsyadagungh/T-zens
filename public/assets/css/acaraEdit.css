@@ -264,9 +264,10 @@ from .icon {
     margin: 0 auto 30px auto;
 }
 
-#chosen-image{
-    margin: auto;
+#chosen-image{  
     z-index: 1;
+    width: 300px;
+    height: auto;
 }
 
 figcaption{
@@ -282,4 +283,7 @@ figcaption{
    position: absolute;
    top: 450px;
     
+}
+.file-name{
+    width: 80%;
 }
