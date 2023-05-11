@@ -98,7 +98,6 @@
                 </div>
                 <div class="content-2">
                     <p class="type">{{ $acara['tipe_acara'] }}</p>
-
                     <p>{{ $acara['subscription'] }}</p>
                 </div>
             </div>
