@@ -142,18 +142,26 @@ nav ul li button:hover {
     font-size: small;
 }
 
+.bungkus{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    gap: 0;
+}
+
 .kolom {
     position: relative;
-    display: grid;
-    grid-template-columns: 25% auto 10%;
-    background-color: white;
-    width: 80%;
-    height: fit-content;
-    border-radius: 10px;
-    margin-left: 150px;
-    margin-top: 200px;
-    padding: 1%;
-    transition: transform 0.5s;
+        display: grid;
+        background-color: white;
+        grid-template-columns: 25% auto 20%;
+        width: 80%;
+        height: fit-content;
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 1%;
+        transition: 0.5s;
 }
 
 .kolom:hover {

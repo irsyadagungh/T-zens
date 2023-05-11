@@ -74,24 +74,25 @@
         </div>
         <img src="/assets/pics/BEM.png" alt="" class="foto1">
     </div>
-    <?php while ($organisasi = mysqli_fetch_assoc($query)):
+    <div class="bungkus">
+        <?php while ($organisasi = mysqli_fetch_assoc($query)):
 
             $foto = "/assets/pictures/".$organisasi['foto'];
 ?>
-    <div class="kolom" onclick="window.location.href='{{ url('/organisasi/detil-organisasi') }}'">
-        <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1" name="foto organisasi">
-        <h3 class="cont" name="judul"> {{ $organisasi['nama'] }}</a> </h3>
+        <div class="kolom" onclick="window.location.href='{{ url('/organisasi/detil-organisasi') }}'">
+            <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1" name="foto organisasi">
+            <h3 class="cont" name="judul"> {{ $organisasi['nama'] }}</a> </h3>
 
-        <div class="like">
+            <div class="like">
 
-            <span class="material-symbols-outlined icon" name="share">
-                share
-            </span>
-            <i class="fa-regular fa-heart icon"></i>
+                <span class="material-symbols-outlined icon" name="share">
+                    share
+                </span>
+                <i class="fa-regular fa-heart icon"></i>
+            </div>
         </div>
+        <?php endwhile; ?>
     </div>
-
-    <?php endwhile; ?>
 
     <footer>
         <p class="copyright"> Copyright © 2023 - T-Zens . All Rights Reserved </p>
