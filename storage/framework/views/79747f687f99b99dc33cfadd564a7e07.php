@@ -93,16 +93,16 @@
         </div>
         <?php endwhile; ?>
     </div>
-
-    <footer>
-        <p class="copyright"> Copyright © 2023 - T-Zens . All Rights Reserved </p>
-    </footer>
+    
     <script>
         var icon = document.querySelector(".fa-heart");
         icon.addEventListener("click", function() {
             icon.classList.toggle("liked");
         });
-    </script>
+        </script>
+        <footer>
+            <p class="copyright"> Copyright © 2023 - T-Zens . All Rights Reserved </p>
+        </footer>
 </body>
 
 </html>

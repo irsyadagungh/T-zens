@@ -97,7 +97,7 @@ class PortofolioController extends Controller
                 Storage::delete($request->oldImage);
             }
             $ValidatedData['picture'] = $request->file('picture')->store('/picture-portofolio');
-        }
+        } 
 
         Portofolio::where('id', $id)->update($ValidatedData);
 
@@ -122,3 +122,4 @@ class PortofolioController extends Controller
         return redirect('/portofolios')->with('delete', 'your data have been deleted');
     }
 }
+
