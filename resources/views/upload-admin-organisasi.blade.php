@@ -60,7 +60,7 @@
                     @csrf
                     <div class="satu">
                         <div class="namaAcara">
-                            <label for="">Nama Acara</label>
+                            <label for="">Nama Organisasi</label>
                             <input type="text" class="inputan" name="nama">
                         </div>
                         <div class="Deskripsi">
