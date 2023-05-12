@@ -143,6 +143,16 @@ body{
   border-radius: 20px;
 }
 
+.box-3 p{
+  color: black;
+  justify-content: center;
+}
+
+.box-3 h5{
+  margin-left: 10px;
+  color: black;
+}
+
 .overlay2{
   margin-left: 10px;
   color: black;
