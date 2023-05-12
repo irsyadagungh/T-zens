@@ -94,15 +94,13 @@
         <?php endwhile; ?>
     </div>
     
+    
     <script>
         var icon = document.querySelector(".fa-heart");
         icon.addEventListener("click", function() {
             icon.classList.toggle("liked");
         });
         </script>
-        <footer>
-            <p class="copyright"> Copyright © 2023 - T-Zens . All Rights Reserved </p>
-        </footer>
 </body>
 
 </html>
