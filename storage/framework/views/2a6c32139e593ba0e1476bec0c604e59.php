@@ -73,7 +73,7 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-
+                
                 <div class="kolom">
                     <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
                         name="foto organisasi">
@@ -82,19 +82,21 @@
                         <p><?php echo e($acara['deskripsi']); ?></p>
                     </div>
                     <div class="like">
-                        <button class="lihat">Lihat</button>
-                        <button class="edit">Edit</button>
+                        <button onclick="window.location.href='/admin/viewAcara/<?php echo e($acara['id']); ?>/delete'"
+                            class="lihat" name="id">Hapus</button>
+                        <a href="/admin/viewAcara/edit/<?php echo e($acara['id']); ?>"><button type="submit"
+                                class="edit">Edit</button></a>
                     </div>
                 </div>
 
                 <hr>
-
+                
                 <?php endwhile; ?>
 
             </div>
         </div>
         <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/edit')); ?>'">
+            <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
                 +
                 <span>Upload</span>
             </button>

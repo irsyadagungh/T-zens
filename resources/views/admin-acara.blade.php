@@ -73,7 +73,8 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-
+                {{-- <form action="/admin/viewAcara/edit" method="post">
+                    @csrf --}}
                 <div class="kolom">
                     <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
                         name="foto organisasi">
@@ -82,19 +83,21 @@
                         <p>{{ $acara['deskripsi'] }}</p>
                     </div>
                     <div class="like">
-                        <button class="lihat">Lihat</button>
-                        <button class="edit">Edit</button>
+                        <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
+                            class="lihat" name="id">Hapus</button>
+                        <a href="/admin/viewAcara/edit/{{ $acara['id'] }}"><button type="submit"
+                                class="edit">Edit</button></a>
                     </div>
                 </div>
 
                 <hr>
-
+                {{-- </form> --}}
                 <?php endwhile; ?>
 
             </div>
         </div>
         <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'">
+            <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewAcara/upload') }}'">
                 +
                 <span>Upload</span>
             </button>

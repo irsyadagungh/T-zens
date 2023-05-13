@@ -51,23 +51,6 @@
             </div>
 
 
-            @php
-                session_start();
-                $server = 'localhost';
-                $username = 'root';
-                $pass = '';
-                $dbname = 'tzens';
-                
-                $conn = mysqli_connect($server, $username, $pass, $dbname);
-                
-                if (!$conn) {
-                    die('Connection failed : ' . mysqli_connect_error());
-                }
-                
-                $query = mysqli_query($conn, 'SELECT * FROM acara');
-                $acara = mysqli_fetch_assoc($query);
-            @endphp
-
 
             <!-- TENGAH -->
             <div class="judul">
@@ -76,12 +59,11 @@
             <section class="bungkus">
                 <form action="/admin/viewAcara/upload/create" method="post" enctype="multipart/form-data"
                     class="form">
-                    @method('PUT')
                     @csrf
                     <div class="satu">
                         <div class="namaAcara">
                             <label for="">Nama Acara</label>
-                            <input type="text" class="inputan" name="nama" value="{{ $acara['nama'] }}">
+                            <input type="text" class="inputan" name="nama">
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
