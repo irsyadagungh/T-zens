@@ -85,8 +85,10 @@
                     <div class="like">
                         <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
                             class="lihat" name="id">Hapus</button>
-                        <a href="http://localhost:8080/phpmyadmin/index.php?route=/sql&db=tzens&table=acara&pos=0"><button type="submit"
-                                class="edit">Edit</button></a>
+                            <form action="/admin/viewAcara/edit">
+                        <button type="submit"
+                                class="edit" name="edit" onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'" value="{{$acara['id']}}">Edit</button>
+                            </form>
                     </div>
                 </div>
 

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class AcaraEditController extends Controller
 {
-    public function viewAdminAcaraEdit($id)
+    public function edit()
     {
-        return view('acara-edit');
+
     }
 }
