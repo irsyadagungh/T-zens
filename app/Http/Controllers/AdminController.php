@@ -92,7 +92,7 @@ class AdminController extends Controller
         }
     }
 
-    public function delete($id)
+    public function delete()
     {
         session_start();
 
@@ -107,15 +107,6 @@ class AdminController extends Controller
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $query = "DELETE FROM `acara` WHERE id = '$id'";
-            $run = mysqli_query($conn, $query);
-            if ($run) {
-                return redirect('/admin/viewAcara');
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-        }
+
     }
 }

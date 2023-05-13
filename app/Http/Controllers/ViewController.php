@@ -70,7 +70,7 @@ class ViewController extends Controller
     {
         return view('acara-upload');
     }
-    public function viewAdminAcaraEdit($id)
+    public function viewAdminAcaraEdit()
     {
         return view('acara-edit');
     }

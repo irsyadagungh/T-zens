@@ -73,28 +73,41 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-                
-                <div class="kolom">
-                    <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
-                        name="foto organisasi">
-                    <div class="isi">
-                        <h3 class="cont" name="judul"> <?php echo e($acara['nama']); ?> </h3>
-                        <p><?php echo e($acara['deskripsi']); ?></p>
+                <form method="get">
+                    <?php echo csrf_field(); ?>
+                    <div class="kolom">
+                        <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
+                            name="foto organisasi">
+                        <div class="isi">
+                            <h3 class="cont" name="judul"> <?php echo e($acara['nama']); ?> </h3>
+                            <p><?php echo e($acara['deskripsi']); ?></p>
+                        </div>
+                        <div class="like">
+                            <button class="edit" value="<?php echo e($acara['id']); ?>" name="hapus">Hapus</button>
+                            <button class="edit"
+                                onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">Edit</button>
+                        </div>
                     </div>
-                    <div class="like">
-                        <button onclick="window.location.href='/admin/viewAcara/<?php echo e($acara['id']); ?>/delete'"
-                            class="lihat" name="id">Hapus</button>
-                        <a href="/admin/viewAcara/edit/<?php echo e($acara['id']); ?>"><button type="submit"
-                                class="edit">Edit</button></a>
-                    </div>
-                </div>
 
-                <hr>
-                
-                <?php endwhile; ?>
+                    <hr>
+                </form>
 
             </div>
         </div>
+        <?php endwhile;
+
+                 if (isset($_GET['hapus'])) {
+            $id = $_GET['hapus'];
+            $query = "DELETE FROM `acara` WHERE id = '$id'";
+            $run = mysqli_query($conn, $query);
+            if ($run) {
+                return view('admin-acara');
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+
+                ?>
         <div class="upload">
             <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
                 +

@@ -54,6 +54,11 @@
             </div>
 
           <div class="box-3">
+          <h5>Motivasi
+                <br>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa, expedita aliquam architecto id vel reiciendis enim, ipsa vero, molestiae nostrum rerum. Dicta ipsum doloremque repudiandae ab debitis est quidem!</p>
+              </h5>
             <div class="overlay3">
 
             </div>
