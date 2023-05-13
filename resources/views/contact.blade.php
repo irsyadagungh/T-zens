@@ -23,17 +23,13 @@
         <div class="navbar">
           <img src="assets/pics/logo tijens kiri.png" alt="" class="logo" />
           <ul>
-            <li>Home</li>
-            <li>Acara</li>
-            <li>Organisasi</li>
+            <li onclick="window.location.href='{{ url('/') }}'" style="cursor: pointer">Home</li>
+            <li class="active" onclick="window.location.href='{{ url('/acara') }}'" style="cursor: pointer">Acara</li>
+            <li onclick="window.location.href='{{ url('/organisasi') }}'" style="cursor: pointer">Organisasi</li>
             <li>Kontak</li>
           </ul>
           <button
-            type="submit"
-            class="button"
-            onclick="window.location.href='julians.html'"
-            name="submit"
-            value="submit"
+            class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'"
           >
             Daftar
           </button>
@@ -79,7 +75,7 @@
             Ayo Explore mengenai Acara-Acara terbaru dan Organisasi yang siap
             anda ikuti disini!
           </p>
-          <span class="material-symbols-outlined"> arrow_forward </span>
+          <span class="material-symbols-outlined" onclick="window.location.href='{{ url('/acara') }}'" style="cursor: pointer"> arrow_forward </span>
         </div>
         <div class="perpotoan">
           <img src="assets/pics/fotowildan.png" alt="" class="wildan" />

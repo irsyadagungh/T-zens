@@ -92,7 +92,7 @@ class AdminController extends Controller
         }
     }
 
-    public function delete()
+    public function edit()
     {
         session_start();
 
@@ -106,7 +106,31 @@ class AdminController extends Controller
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
+        if(isset($_POST['submit'])){
+            $id = $_POST['id'];
+            $nama = $_POST['nama'];
+            $targetDir = "assets/pictures/";
+            $gambar = basename($_FILES['foto']['name']);
+            $targetFile = $targetDir . $gambar;
+            move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFile);
+
+            $waktu = $_POST['tanggal'];
+            $jam = $_POST['jam'];
+            $deskripsi = $_POST['deskripsi'];
+            $tipeAcara = $_POST['tipe_acara'];
+            $benefit = $_POST['benefit'];
+            $subs = $_POST['subscribe'];
 
 
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $query = "DELETE FROM `acara` WHERE id = '$id'";
+            $run = mysqli_query($conn, $query);
+            if ($run) {
+                return redirect('/admin/viewAcara');
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
     }
 }

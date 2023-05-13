@@ -73,23 +73,27 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-                <form method="get">
-                    @csrf
-                    <div class="kolom">
-                        <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
-                            name="foto organisasi">
-                        <div class="isi">
-                            <h3 class="cont" name="judul"> {{ $acara['nama'] }} </h3>
-                            <p>{{ $acara['deskripsi'] }}</p>
-                        </div>
-                        <div class="like">
-                            <button class="lihat" value="{{ $acara['id'] }}" name="hapus">Hapus</button>
-                            <button onclick="window.location.href='{{ url('/admin/viewAcara/upload') }}'" class="edit"
-                                name="edit">Edit</button>
-                        </div>
+                {{-- <form action="/admin/viewAcara/edit" method="post">
+                    @csrf --}}
+                <div class="kolom">
+                    <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
+                        name="foto organisasi">
+                    <div class="isi">
+                        <h3 class="cont" name="judul"> {{ $acara['nama'] }} </h3>
+                        <p>{{ $acara['deskripsi'] }}</p>
                     </div>
+                    <div class="like">
+                        <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
+                            class="lihat" name="id">Hapus</button>
+                        <form action="/admin/viewAcara/edit">
+                            <button type="submit" class="edit" name="edit"
+                                onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'"
+                                value="{{ $acara['id'] }}">Edit</button>
+                        </form>
+                    </div>
+                </div>
 
-                    <hr>
+                <hr>
                 </form>
 
             </div>

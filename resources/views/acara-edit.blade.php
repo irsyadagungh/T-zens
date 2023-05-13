@@ -57,15 +57,21 @@
                 $username = 'root';
                 $pass = '';
                 $dbname = 'tzens';
-                
+
                 $conn = mysqli_connect($server, $username, $pass, $dbname);
-                
+
                 if (!$conn) {
                     die('Connection failed : ' . mysqli_connect_error());
                 }
-                
+
                 $query = mysqli_query($conn, 'SELECT * FROM acara');
                 $acara = mysqli_fetch_assoc($query);
+
+                if (isset($_GET['edit'])) {
+                 $id = $_GET['edit'];
+                 $query = mysqli_query($conn, "SELECT * FROM acara WHERE id = '$id'");
+                $acara = mysqli_fetch_assoc($query);
+                }
             @endphp
 
 
@@ -74,9 +80,8 @@
                 <h3>Acara/Edit</h3>
             </div>
             <section class="bungkus">
-                <form action="/admin/viewAcara/upload/create" method="post" enctype="multipart/form-data"
+                <form action="/admin/viewAcara/edit2" method="post" enctype="multipart/form-data"
                     class="form">
-                    @method('PUT')
                     @csrf
                     <div class="satu">
                         <div class="namaAcara">
@@ -85,7 +90,7 @@
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan"></textarea>
+                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['deskripsi'] }}</textarea>
                         </div>
                         <div class="tipeAcara">
                             <label for="">Tipe Acara</label>
@@ -97,14 +102,14 @@
                         </div>
                         <div class="Benefit">
                             <label for="">Benefit</label>
-                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan"></textarea>
+                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['deskripsi'] }}</textarea>
                         </div>
                         <div class="subscription">
                             <label for="">Subscribe</label>
                             <select name="subscribe" id="">
                                 <option value="" selected disabled> Subscribe </option>
-                                <option value="Free">Gratis</option>
-                                <option value="Pay">Pembayaran</option>
+                                <option value="{{ $acara['subscription']}}">Gratis</option>
+                                <option value="{{ $acara['subscription']}}">Pembayaran</option>
                             </select>
                         </div>
                     </div>
@@ -112,9 +117,9 @@
 
                         <div class="waktu">
                             <label for="">Tanggal</label>
-                            <input type="date" name="tanggal">
+                            <input type="date" name="tanggal" value="{{ $acara['waktu']}}">
                             <label for="">Waktu</label>
-                            <input type="time" name="jam">
+                            <input type="time" name="jam" value="{{ $acara['jam']}}">
                         </div>
                         <div class="upload">
                             <h5>Unggah file</h5>
@@ -123,8 +128,8 @@
                             <figure class="row-1">
                                 <img src="/assets/pics/upfile.png" alt="" class="iconn">
 
-                                <img id="chosen-image">
-                                <figcaption class="file-name" id="file-name">
+                                <img src="/assets/pictures/<?php echo $acara['foto']; ?>" id="chosen-image">
+                                <figcaption class="file-name" id="file-name" value="{{ $acara['foto']}}">
 
                                 </figcaption>
                                 <input type="file" id="pilih" accept="image/*" class="uploadFoto" hidden
@@ -132,6 +137,8 @@
                             </figure>
                             <div class="sub">
                                 <input type="submit" class="upload kursor" name="submit">
+                                <input type="hidden" name="id" value="{{ $acara['id'] }}">
+
                             </div>
                         </div>
 

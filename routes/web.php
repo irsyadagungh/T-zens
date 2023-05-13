@@ -50,7 +50,8 @@ Route::post('/admin/viewAcara', [ViewController::class, 'viewAdminAcara']);
 
 Route::get('/admin/viewAcara/upload', [ViewController::class, 'viewAdminAcaraUpload']);
 Route::get('/admin/viewAcara/edit', [ViewController::class, 'viewAdminAcaraEdit']);
-Route::get('/admin/viewAcara/delete', [App\Http\Controllers\AdminController::class, 'delete']);
+Route::post('/admin/viewAcara/edit2', [App\Http\Controllers\AdminController::class, 'edit']);
+Route::get('/admin/viewAcara/{$id}/delete', [App\Http\Controllers\AdminController::class, 'delete']);
 Route::post('/admin/viewAcara/upload/create', [App\Http\Controllers\AdminController::class, 'createAcara']);
 Route::post('/admin/viewOrganisasi/edit/create', [App\Http\Controllers\AdminOrganisasiController::class, 'createOrganisasi']);
 Route::get('/admin/viewOrganisasi', [ViewController::class, 'viewAdminOrganisasi']);
