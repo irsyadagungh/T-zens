@@ -52,29 +52,17 @@ li {
 }
 
 .button {
-    position: absolute;
-    width: 100px;
-    height: 40px;
-    left: 1150px;
-    top: 365px;
     border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    margin: 4px 2px;
-    cursor: pointer;
+    width: 60px;
+    height: 30px;
     background-color: #0081c9;
-    width: 100px;
-    height: 40px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-top: -220px;
+    box-shadow: 5px 5px 20px #0081c9;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: #d9edf8;
+    cursor: pointer;
+    margin-left: 1160px;
+    margin-top: 150px;
 }
 .tim {
     position: absolute;

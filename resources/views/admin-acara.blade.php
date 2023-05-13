@@ -54,13 +54,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-                    
+
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-                    
+
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-                    
+
                     $query = mysqli_query($conn, 'SELECT * FROM acara');
                     $acara = mysqli_fetch_assoc($query);
                 @endphp
@@ -85,7 +85,7 @@
                     <div class="like">
                         <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
                             class="lihat" name="id">Hapus</button>
-                        <a href="/admin/viewAcara/edit/{{ $acara['id'] }}"><button type="submit"
+                        <a href="http://localhost:8080/phpmyadmin/index.php?route=/sql&db=tzens&table=acara&pos=0"><button type="submit"
                                 class="edit">Edit</button></a>
                     </div>
                 </div>

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/assets/css/acaraEdit.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/322f056c55.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         .material-symbols-outlined {
             font-variation-settings:
@@ -50,18 +51,37 @@
             </div>
 
 
+            <?php
+                session_start();
+                $server = 'localhost';
+                $username = 'root';
+                $pass = '';
+                $dbname = 'tzens';
+                
+                $conn = mysqli_connect($server, $username, $pass, $dbname);
+                
+                if (!$conn) {
+                    die('Connection failed : ' . mysqli_connect_error());
+                }
+                
+                $query = mysqli_query($conn, 'SELECT * FROM acara');
+                $acara = mysqli_fetch_assoc($query);
+            ?>
+
 
             <!-- TENGAH -->
             <div class="judul">
                 <h3>Acara/Edit</h3>
             </div>
             <section class="bungkus">
-                <form action="/admin/viewAcara/edit/create" method="post" enctype="multipart/form-data" class="form">
+                <form action="/admin/viewAcara/upload/create" method="post" enctype="multipart/form-data"
+                    class="form">
+                    <?php echo method_field('PUT'); ?>
                     <?php echo csrf_field(); ?>
                     <div class="satu">
                         <div class="namaAcara">
                             <label for="">Nama Acara</label>
-                            <input type="text" class="inputan" name="nama">
+                            <input type="text" class="inputan" name="nama" value="<?php echo e($acara['nama']); ?>">
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
@@ -102,43 +122,44 @@
                         <div class="form2">
                             <figure class="row-1">
                                 <img src="/assets/pics/upfile.png" alt="" class="iconn">
-                                
+
                                 <img id="chosen-image">
                                 <figcaption class="file-name" id="file-name">
-                                    
+
                                 </figcaption>
-                                <input type="file" id="pilih" accept="image/*" class="uploadFoto" hidden name="foto">
+                                <input type="file" id="pilih" accept="image/*" class="uploadFoto" hidden
+                                    name="foto">
                             </figure>
                             <div class="sub">
                                 <input type="submit" class="upload kursor" name="submit">
                             </div>
                         </div>
 
-        </div>
-        </form>
-        </section>
-        <script>
-            const form = document.querySelector(".row-1"),
-                fileinput = document.querySelector(".uploadFoto");
+                    </div>
+                </form>
+            </section>
+            <script>
+                const form = document.querySelector(".row-1"),
+                    fileinput = document.querySelector(".uploadFoto");
 
-            form.addEventListener("click", () => {
-                fileinput.click();
-            });
-        </script>
-        <script>
-            let uploadButton = document.getElementById("pilih");
-            let chosenImage = document.getElementById("chosen-image");
-            let fileName = document.getElementById("file-name");
+                form.addEventListener("click", () => {
+                    fileinput.click();
+                });
+            </script>
+            <script>
+                let uploadButton = document.getElementById("pilih");
+                let chosenImage = document.getElementById("chosen-image");
+                let fileName = document.getElementById("file-name");
 
-            uploadButton.onchange = () => {
-            let reader = new FileReader();
-            reader.readAsDataURL(uploadButton.files[0]);
-            reader.onload = () => {
-            chosenImage.setAttribute("src",reader.result);
-    }
-            fileName.textContent = uploadButton.files[0].name;
-}
-        </script>
+                uploadButton.onchange = () => {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(uploadButton.files[0]);
+                    reader.onload = () => {
+                        chosenImage.setAttribute("src", reader.result);
+                    }
+                    fileName.textContent = uploadButton.files[0].name;
+                }
+            </script>
 </body>
 
 </html>
