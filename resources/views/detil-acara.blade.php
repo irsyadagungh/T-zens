@@ -64,6 +64,7 @@
                     <img src="/assets/pics/Line 1.png" alt="" class="garis-4" />
                 </div>
             </div>
+
             <p class="kata-kata">
                 Extra Artdinary merupakan Acara pameran yang didalamnya akan
                 menampilkan sebuah Tugas Akhir dari teman-teman Program Studi DKV-MM

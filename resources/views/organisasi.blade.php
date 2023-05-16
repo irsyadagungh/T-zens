@@ -31,8 +31,12 @@
             <li class="active" onclick="window.location.href='{{ url('/acara') }}'">Acara</li>
             <li onclick="window.location.href='{{ url('/organisasi') }}'">Organisasi</li>
             <li onclick="window.location.href='{{ url('/kontak') }}'">Kontak</li>
-            <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button>
-            </li>
+            @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+                <li><a href="{{ route('logout') }}" class="button daftar">Logout</a></li>
+            @else
+             <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button></li>
+            @endif
+
         </ul>
     </nav>
 
@@ -43,13 +47,13 @@
         $username = 'root';
         $pass = '';
         $dbname = 'tzens';
-        
+
         $conn = mysqli_connect($server, $username, $pass, $dbname);
-        
+
         if (!$conn) {
             die('Connection failed : ' . mysqli_connect_error());
         }
-        
+
         $query = mysqli_query($conn, 'SELECT * FROM organisasi');
         $organisasi = mysqli_fetch_assoc($query);
     @endphp
@@ -93,8 +97,8 @@
         </div>
         <?php endwhile; ?>
     </div>
-    
-    
+
+
     <script>
         var icon = document.querySelector(".fa-heart");
         icon.addEventListener("click", function() {

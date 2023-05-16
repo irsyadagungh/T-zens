@@ -19,6 +19,7 @@
     font-size: 15px;
     padding: 5px;
     color: white;
+    text-decoration: none;
 }
 .button:hover {
     box-shadow: 0 0 0 black;
@@ -126,6 +127,11 @@ nav ul li button:hover {
     font-size: 2em;
     margin-bottom: 0;
 }
+
+.sess1{
+color: #0081c9;
+}
+
 .judul2{
     font-size: 1.5em;
 }
@@ -134,6 +140,12 @@ nav ul li button:hover {
     position: relative;
     width: 500px;
     margin: auto;
+}
+
+.sess{
+
+    margin-top: 50px;
+    height: 50px;
 }
 
 

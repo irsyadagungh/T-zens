@@ -36,7 +36,12 @@
             <li class="active" onclick="window.location.href='{{ url('/acara') }}'">Acara</li>
             <li onclick="window.location.href='{{ url('/organisasi') }}'">Organisasi</li>
             <li onclick="window.location.href='{{ url('/kontak') }}'">Kontak</li>
-            <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button></li>
+            @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+                <li><a href="{{ route('logout') }}" class="button daftar">Logout</a></li>
+            @else
+             <li><button class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button></li>
+            @endif
+
         </ul>
     </nav>
   <main>
@@ -44,13 +49,15 @@
     <!-- Section 1 -->
     <section class="home-1">
         <div data-aos="fade-up" data-aos-duration="1000" class="home-1-teks">
-            <p class="judul1">Halo, Selamat Datang.</p>
+            <p class="judul1">Selamat Datang <span class="sess1">{{session()->get('success2')}}</span></p>
+
+
             <p class="judul2">Temukan Informasi
             yang Anda inginkan disini!</p>
             <p>Tersedia berbagai macam pilihan informasi yang tersedia didalamnya mengenai Acara, Event, dan Organisasi
             di dunia kampus Telkom University.</p>
             <a href="#3"> <button class="button" >Telusuri</button></a>
-          </div>
+        </div>
           <div data-aos="fade-up" data-aos-duration="1800">
               <img class="foto1" src="/assets/pics/pic-landpage.png" alt="">
         </div>

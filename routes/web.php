@@ -57,3 +57,6 @@ Route::post('/admin/viewOrganisasi/edit/create', [App\Http\Controllers\AdminOrga
 Route::get('/admin/viewOrganisasi', [ViewController::class, 'viewAdminOrganisasi']);
 
 Route::get('/admin/viewOrganisasi/edit', [ViewController::class, 'viewAdminOrganisasiEdit']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+

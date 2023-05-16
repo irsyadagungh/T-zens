@@ -108,7 +108,7 @@
                             <label for="">Subscribe</label>
                             <select name="subscribe" id="">
                                 <option value="" selected disabled> Subscribe </option>
-                                <option value="<?=$acara['subscription'];?>"><?php echo $acara['subscription'];?></option>
+                                <option value="<?php echo e($acara['subscription']); ?>">Gratis</option>
                                 <option value="<?php echo e($acara['subscription']); ?>">Pembayaran</option>
                             </select>
                         </div>

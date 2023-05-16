@@ -9,16 +9,16 @@
 </head>
 <body>
 
-  
+
   <div class="wrapper">
     <div class="sidebar">
       <ul>
             <li><a href="#"><i class="fas fa-blog"></i>Dashboard</a></li>
             <li><a href="<?php echo e(url('/admin/viewAcara')); ?>"><i class="fas fa-address-book"></i>Acara</a></li>
             <li><a href="<?php echo e(url('/admin/viewOrganisasi')); ?>"><i class="fas fa-map-pin"></i>Organisasi</a></li>
-        </ul> 
+        </ul>
     </div>
-    
+
     <div class="main_content">
         <div class="header">
         <div class="search">
@@ -30,7 +30,7 @@
          <div class="profile">
           <img src="/assets/pics/profile.png" alt="">
           <div class="text">
-          <h4>Mielola</h4>
+          <h4><?php echo e(session()->get('success')); ?></h4>
           <p>Super Admin</p>
         </div>
          </div>
@@ -57,6 +57,7 @@
           <h5>Motivasi
                 <br>
                 <br>
+
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa, expedita aliquam architecto id vel reiciendis enim, ipsa vero, molestiae nostrum rerum. Dicta ipsum doloremque repudiandae ab debitis est quidem!</p>
               </h5>
             <div class="overlay3">
@@ -69,4 +70,5 @@
 </div>
 
 </body>
-</html><?php /**PATH C:\xampp\htdocs\laravel-tugas\T-zens\resources\views/admin.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH C:\xampp\htdocs\laravel-tugas\T-zens\resources\views/admin.blade.php ENDPATH**/ ?>

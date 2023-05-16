@@ -24,6 +24,20 @@ body {
 }
 
 /* NAVBAR */
+
+.button {
+    background-color: #0081c9;
+    color: #d9edf8;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
+
 nav {
     position: fixed;
     display: flex;
@@ -114,7 +128,7 @@ nav ul li button:hover {
 
 .gmbr1{
     width: 200px;
-    
+
 }
 
 .isi1 {

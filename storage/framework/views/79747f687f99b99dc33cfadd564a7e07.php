@@ -31,8 +31,12 @@
             <li class="active" onclick="window.location.href='<?php echo e(url('/acara')); ?>'">Acara</li>
             <li onclick="window.location.href='<?php echo e(url('/organisasi')); ?>'">Organisasi</li>
             <li onclick="window.location.href='<?php echo e(url('/kontak')); ?>'">Kontak</li>
-            <li><button class="button daftar" onclick="window.location.href='<?php echo e(url('/sign-up')); ?>'">Daftar</button>
-            </li>
+            <?php if( \Illuminate\Support\Facades\Session::has('success2')): ?>
+                <li><a href="<?php echo e(route('logout')); ?>" class="button daftar">Logout</a></li>
+            <?php else: ?>
+             <li><button class="button daftar" onclick="window.location.href='<?php echo e(url('/sign-up')); ?>'">Daftar</button></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
 
@@ -43,13 +47,13 @@
         $username = 'root';
         $pass = '';
         $dbname = 'tzens';
-        
+
         $conn = mysqli_connect($server, $username, $pass, $dbname);
-        
+
         if (!$conn) {
             die('Connection failed : ' . mysqli_connect_error());
         }
-        
+
         $query = mysqli_query($conn, 'SELECT * FROM organisasi');
         $organisasi = mysqli_fetch_assoc($query);
     ?>
@@ -93,8 +97,8 @@
         </div>
         <?php endwhile; ?>
     </div>
-    
-    
+
+
     <script>
         var icon = document.querySelector(".fa-heart");
         icon.addEventListener("click", function() {

@@ -6,6 +6,7 @@ use App\Models\Pengguna;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -76,8 +77,10 @@ class LoginController extends Controller
                     $_SESSION["stat"] = $row["status"];
                     $result2 = mysqli_query($conn, $query);
                     if ($_SESSION["stat"] == 'admin') {
+                        Session::put('success', $username);
                         return redirect('/dashboard/view');
                     } else {
+                        Session::put('success2', $username);
                         echo "<script>
                     alert('Kamu gk masuk');
                         window.location.href = '/';
@@ -99,5 +102,21 @@ class LoginController extends Controller
         }
 
     }
+    public function logout()
+    {
+        Auth::logout();
+        Session::flush();
+
+        return redirect('/');
+    }
+    public function isAuthenticated()
+    {
+        if (Auth::check()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+
 ?>
