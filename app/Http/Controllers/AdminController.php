@@ -122,23 +122,15 @@ class AdminController extends Controller
             $subs = $_POST['subscribe'];
 
 
-            $query = mysqli_query($conn, "UPDATE `acara` SET `nama` = '$nama', `foto` = '$gambar', `waktu` = '$waktu', `jam` = '$jam', `deskripsi` = '$deskripsi', `tipe_acara` = '$tipeAcara', `benefit` = '$benefit', `subscription` = '$subs', `created_at` = NULL, `updated_at` = NULL WHERE `acara`.`id` = $id");
-            if ($query) {
-                // Jalankan kueri SELECT untuk mendapatkan data acara yang diperbarui
-                $selectQuery = mysqli_query($conn, "SELECT * FROM `acara` WHERE `id` = $id");
-                $acara = mysqli_fetch_assoc($selectQuery);
-                // Lanjutkan penggunaan variabel $acara dengan data yang diperbarui
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $query = "DELETE FROM `acara` WHERE id = '$id'";
+            $run = mysqli_query($conn, $query);
+            if ($run) {
+                return redirect('/admin/viewAcara');
             } else {
-                // Penanganan kesalahan jika UPDATE gagal
+                echo "Error: " . mysqli_error($conn);
             }
         }
-
-            // $_SESSION['id'] = $id;
-            // $_SESSION['nama'] = $acara['nama'];
-            // $_SESSION['tanggal'] = $acara['waktu'];
-            // $_SESSION['jam'] = $acara['jam'];
-            // $_SESSION['deskripsi'] = $acara['deskripsi'];
-            return redirect('/admin/viewAcara');
-        }
     }
-
+}

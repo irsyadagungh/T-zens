@@ -54,13 +54,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-
+                    
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-
+                    
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-
+                    
                     $query = mysqli_query($conn, 'SELECT * FROM acara');
                     $acara = mysqli_fetch_assoc($query);
                 @endphp
@@ -85,19 +85,33 @@
                     <div class="like">
                         <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
                             class="lihat" name="id">Hapus</button>
-                            <form action="/admin/viewAcara/edit">
-                        <button type="submit"
-                                class="edit" name="edit" onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'" value="{{$acara['id']}}">Edit</button>
-                            </form>
+                        <form action="/admin/viewAcara/edit">
+                            <button type="submit" class="edit" name="edit"
+                                onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'"
+                                value="{{ $acara['id'] }}">Edit</button>
+                        </form>
                     </div>
                 </div>
 
                 <hr>
-                {{-- </form> --}}
-                <?php endwhile; ?>
+                </form>
 
             </div>
         </div>
+        <?php endwhile;
+
+                 if (isset($_GET['hapus'])) {
+            $id = $_GET['hapus'];
+            $query = "DELETE FROM `acara` WHERE id = '$id'";
+            $run = mysqli_query($conn, $query);
+            if ($run) {
+                return view('admin-acara');
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+
+                ?>
         <div class="upload">
             <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewAcara/upload') }}'">
                 +
