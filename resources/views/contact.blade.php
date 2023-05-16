@@ -27,12 +27,9 @@
             <li class="active" onclick="window.location.href='{{ url('/acara') }}'" style="cursor: pointer">Acara</li>
             <li onclick="window.location.href='{{ url('/organisasi') }}'" style="cursor: pointer">Organisasi</li>
             <li>Kontak</li>
+
           </ul>
-          <button
-            class="button daftar" onclick="window.location.href='{{ url('/sign-up') }}'"
-          >
-            Daftar
-          </button>
+
         </div>
         <div class="siapa-kami">
           <p class="tim">Ngeureuyeuh Tim</p>

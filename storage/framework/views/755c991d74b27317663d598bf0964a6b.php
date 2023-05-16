@@ -33,9 +33,9 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Julians Batubara</h4>
+                        <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
-                    </div>
+                      </div>
                 </div>
             </div>
 
@@ -54,13 +54,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-                    
+
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-                    
+
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-                    
+
                     $query = mysqli_query($conn, 'SELECT * FROM organisasi');
                     $organisasi = mysqli_fetch_assoc($query);
                 ?>

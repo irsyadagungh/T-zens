@@ -44,9 +44,9 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Mielola</h4>
+                        <h4>{{session()->get('success')}}</h4>
                         <p>Super Admin</p>
-                    </div>
+                      </div>
                 </div>
             </div>
 
@@ -54,7 +54,7 @@
 
             <!-- TENGAH -->
             <div class="judul">
-                <h3>Acara/Edit</h3>
+                <h3>Acara/Upload</h3>
             </div>
             <section class="bungkus">
                 <form action="/admin/viewAcara/upload/create" method="post" enctype="multipart/form-data"

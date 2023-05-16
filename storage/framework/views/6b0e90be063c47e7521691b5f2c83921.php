@@ -33,9 +33,9 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Mielola</h4>
+                        <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
-                    </div>
+                      </div>
                 </div>
             </div>
 

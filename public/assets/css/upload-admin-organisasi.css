@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Poppins&family=Questrial&family=Satisfy&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -5,6 +6,7 @@
 
 body {
   height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
 .upload {
@@ -265,7 +267,7 @@ from .icon {
   margin: 0 auto 30px auto;
 }
 
-#chosen-image{  
+#chosen-image{
   z-index: 1;
   width: 300px;
   height: auto;
@@ -283,7 +285,7 @@ figcaption{
  margin: auto;
  position: absolute;
  top: 450px;
-  
+
 }
 .file-name{
   width: 80%;
