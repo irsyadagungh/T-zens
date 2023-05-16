@@ -73,8 +73,8 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-                {{-- <form action="/admin/viewAcara/edit" method="post">
-                    @csrf --}}
+                <form action="" method="get">
+                    @csrf
                 <div class="kolom">
                     <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
                         name="foto organisasi">
@@ -83,19 +83,29 @@
                         <p>{{ $acara['deskripsi'] }}</p>
                     </div>
                     <div class="like">
-                        <button onclick="window.location.href='/admin/viewAcara/{{ $acara['id'] }}/delete'"
-                            class="lihat" name="id">Hapus</button>
+                        <button class="lihat" name="hapus" value="{{$acara['id']}}">Hapus</button>
+
+                    </form>
                             <form action="/admin/viewAcara/edit">
                         <button type="submit"
                                 class="edit" name="edit" onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'" value="{{$acara['id']}}">Edit</button>
                             </form>
-                    </div>
                 </div>
+                    </div>
 
                 <hr>
-                {{-- </form> --}}
                 <?php endwhile; ?>
+                    <?php
+                    if(isset($_POST['hapus'])){
+                        $id = $_POST['hapus'];
+                        $query = mysqli_query($conn, "DELETE FROM acara WHERE id = $id");
+                        if ($query) {
+                            echo "<script>alert('Data berhasil dihapus');</script>";
+                            echo "<script>window.location.href='/admin/viewAcara';</script>";
+                            }
 
+                    }
+                    ?>
             </div>
         </div>
         <div class="upload">
@@ -104,6 +114,8 @@
                 <span>Upload</span>
             </button>
         </div>
+
+
 </body>
 
 </html>

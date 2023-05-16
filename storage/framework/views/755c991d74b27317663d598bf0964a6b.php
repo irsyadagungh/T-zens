@@ -83,7 +83,10 @@
                     </div>
                     <div class="like">
                         <button class="lihat">Lihat</button>
-                        <button class="edit">Edit</button>
+                        <form action="/admin/viewAcara/edit">
+                            <button type="submit"
+                                    class="edit" name="edit" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/edit')); ?>'" value="<?php echo e($acara['id']); ?>">Edit</button>
+                                </form>
                     </div>
                 </div>
 
