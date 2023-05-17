@@ -92,7 +92,7 @@ class AdminController extends Controller
         }
     }
 
-    public function edit()
+    public function editAcara()
     {
         session_start();
 
@@ -106,7 +106,7 @@ class AdminController extends Controller
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
-        if(isset($_POST['submit'])){
+        if (isset($_POST['submit'])) {
             $id = $_POST['id'];
             $nama = $_POST['nama'];
             $targetDir = "assets/pictures/";
@@ -133,13 +133,32 @@ class AdminController extends Controller
             }
         }
 
-            // $_SESSION['id'] = $id;
-            // $_SESSION['nama'] = $acara['nama'];
-            // $_SESSION['tanggal'] = $acara['waktu'];
-            // $_SESSION['jam'] = $acara['jam'];
-            // $_SESSION['deskripsi'] = $acara['deskripsi'];
-            return redirect('/admin/viewAcara');
+        // $_SESSION['id'] = $id;
+        // $_SESSION['nama'] = $acara['nama'];
+        // $_SESSION['tanggal'] = $acara['waktu'];
+        // $_SESSION['jam'] = $acara['jam'];
+        // $_SESSION['deskripsi'] = $acara['deskripsi'];
+        return redirect('/admin/viewAcara');
+    }
+
+    public function editOrganisasi()
+    {
+        session_start();
+
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "tzens";
+
+        $conn = mysqli_connect($server, $username, $password, $database);
+
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        if (isset($_POST['edit'])) {
+            # code...
         }
     }
 
-
+}

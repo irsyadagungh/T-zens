@@ -33,9 +33,9 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>{{session()->get('success')}}</h4>
+                        <h4>{{ session()->get('success') }}</h4>
                         <p>Super Admin</p>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -54,13 +54,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-
+                    
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-
+                    
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-
+                    
                     $query = mysqli_query($conn, 'SELECT * FROM acara');
                     $acara = mysqli_fetch_assoc($query);
                 @endphp
@@ -75,45 +75,43 @@
 ?>
                 <form action="" method="get">
                     @csrf
-                <div class="kolom">
-                    <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
-                        name="foto organisasi">
-                    <div class="isi">
-                        <h3 class="cont" name="judul"> {{ $acara['nama'] }} </h3>
-                        <p>{{ $acara['deskripsi'] }}</p>
-                    </div>
-                    <div class="like">
-                        <button class="lihat" name="hapus" value="{{$acara['id']}}">Hapus</button>
+                    <div class="kolom">
+                        <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
+                            name="foto organisasi">
+                        <div class="isi">
+                            <h3 class="cont" name="judul"> {{ $acara['nama'] }} </h3>
+                            <p>{{ $acara['deskripsi'] }}</p>
+                        </div>
+                        <div class="like">
+                            <button class="lihat" name="hapus" value="{{ $acara['id'] }}">Hapus</button>
 
-                    </form>
-                            <form action="/admin/viewAcara/edit">
-                        <button type="submit"
-                                class="edit" name="edit" onclick="window.location.href='{{ url('/admin/viewAcara/edit') }}'" value="{{$acara['id']}}">Edit</button>
-                            </form>
-                </div>
-                    </div>
-
-                <hr>
-                <?php endwhile; ?>
-                    <?php
-                    if(isset($_POST['hapus'])){
-                        $id = $_POST['hapus'];
-                        $query = mysqli_query($conn, "DELETE FROM acara WHERE id = $id");
-                        if ($query) {
-                            echo "<script>alert('Data berhasil dihapus');</script>";
-                            echo "<script>window.location.href='/admin/viewAcara';</script>";
-                            }
-
-                    }
-                    ?>
+                </form>
+                <form action="/admin/viewAcara/edit">
+                    <button type="submit" class="edit" name="edit" value="{{ $acara['id'] }}">Edit</button>
+                </form>
             </div>
         </div>
-        <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewAcara/upload') }}'">
-                +
-                <span>Upload</span>
-            </button>
-        </div>
+
+        <hr>
+        <?php endwhile; ?>
+        <?php
+        if (isset($_GET['hapus'])) {
+            $id = $_GET['hapus'];
+            $query = mysqli_query($conn, "DELETE FROM `acara` WHERE id = $id");
+            if ($query) {
+                echo "<script>alert('Data berhasil dihapus');</script>";
+                echo "<script>window.location.href='/admin/viewAcara';</script>";
+            }
+        }
+        ?>
+    </div>
+    </div>
+    <div class="upload">
+        <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewAcara/upload') }}'">
+            +
+            <span>Upload</span>
+        </button>
+    </div>
 
 
 </body>

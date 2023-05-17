@@ -33,7 +33,7 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Mielola</h4>
+                        <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
 
             $foto = "/assets/pictures/".$acara['foto'];
 ?>
-                <form method="get">
+                <form action="" method="get">
                     <?php echo csrf_field(); ?>
                     <div class="kolom">
                         <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
@@ -83,37 +83,37 @@
                             <p><?php echo e($acara['deskripsi']); ?></p>
                         </div>
                         <div class="like">
-                            <button class="edit" value="<?php echo e($acara['id']); ?>" name="hapus">Hapus</button>
-                            <button class="edit"
-                                onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">Edit</button>
-                        </div>
-                    </div>
+                            <button class="lihat" name="hapus" value="<?php echo e($acara['id']); ?>">Hapus</button>
 
-                    <hr>
                 </form>
-
+                <form action="/admin/viewAcara/edit">
+                    <button type="submit" class="edit" name="edit" value="<?php echo e($acara['id']); ?>">Edit</button>
+                </form>
             </div>
         </div>
-        <?php endwhile;
 
-                 if (isset($_GET['hapus'])) {
+        <hr>
+        <?php endwhile; ?>
+        <?php
+        if (isset($_GET['hapus'])) {
             $id = $_GET['hapus'];
-            $query = "DELETE FROM `acara` WHERE id = '$id'";
-            $run = mysqli_query($conn, $query);
-            if ($run) {
-                return view('admin-acara');
-            } else {
-                echo "Error: " . mysqli_error($conn);
+            $query = mysqli_query($conn, "DELETE FROM `acara` WHERE id = $id");
+            if ($query) {
+                echo "<script>alert('Data berhasil dihapus');</script>";
+                echo "<script>window.location.href='/admin/viewAcara';</script>";
             }
         }
+        ?>
+    </div>
+    </div>
+    <div class="upload">
+        <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
+            +
+            <span>Upload</span>
+        </button>
+    </div>
 
-                ?>
-        <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
-                +
-                <span>Upload</span>
-            </button>
-        </div>
+
 </body>
 
 </html>

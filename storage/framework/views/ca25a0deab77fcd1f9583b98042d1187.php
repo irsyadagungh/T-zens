@@ -33,7 +33,7 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Julians Batubara</h4>
+                        <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 ?>
 
                 <?php
-                $acara = mysqli_fetch_assoc($query);
+                $organisasi = mysqli_fetch_assoc($query);
                 ?>
 
                 <?php while ($organisasi = mysqli_fetch_assoc($query)):
@@ -74,29 +74,43 @@
             $foto = "/assets/pictures/".$organisasi['foto'];
 ?>
 
-                <div class="kolom">
-                    <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
-                        name="foto organisasi">
-                    <div class="isi">
-                        <h3 class="cont" name="judul"> <?php echo e($organisasi['nama']); ?> </a> </h3>
-                        <p><?php echo e($organisasi['deskripsi']); ?>3</p>
-                    </div>
-                    <div class="like">
-                        <button class="lihat">Lihat</button>
-                        <button class="edit">Edit</button>
-                    </div>
-                </div>
-
-                <?php endwhile; ?>
-
+                <form action="" method="get">
+                    <div class="kolom">
+                        <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
+                            name="foto organisasi">
+                        <div class="isi">
+                            <h3 class="cont" name="judul"> <?php echo e($organisasi['nama']); ?> </a> </h3>
+                            <p><?php echo e($organisasi['deskripsi']); ?>3</p>
+                        </div>
+                        <div class="like">
+                            <button class="lihat" name="hapus" value="<?php echo e($organisasi['id']); ?>">Hapus</button>
+                </form>
+                <form action="/admin/viewOrganisasi/edit">
+                    <button type="submit" class="edit" name="edit" value="<?php echo e($organisasi['id']); ?>">Edit</button>
+                </form>
             </div>
         </div>
-        <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewOrganisasi/edit')); ?>'">
-                +
-                <span>Upload</span>
-            </button>
-        </div>
+
+        <?php endwhile; ?>
+        <?php
+        if (isset($_GET['hapus'])) {
+            $id = $_GET['hapus'];
+            $query = mysqli_query($conn, "DELETE FROM `organisasi` WHERE id = $id");
+            if ($query) {
+                echo "<script>alert('Data berhasil dihapus');</script>";
+                echo "<script>window.location.href='/admin/viewOrganisasi';</script>";
+            }
+        }
+        ?>
+
+    </div>
+    </div>
+    <div class="upload">
+        <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewOrganisasi/edit')); ?>'">
+            +
+            <span>Upload</span>
+        </button>
+    </div>
 </body>
 
 </html>

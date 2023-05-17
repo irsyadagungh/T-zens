@@ -32,6 +32,11 @@ class ViewController extends Controller
         return view('detil-organisasi');
     }
 
+    public function editOrganisasi()
+    {
+        return view('edit-admin-organisasi');
+    }
+
     public function viewOrganisasi()
     {
         return view('organisasi');

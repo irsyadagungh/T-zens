@@ -50,7 +50,8 @@ Route::get('/admin/viewAcara', [ViewController::class, 'viewAdminAcara']);
 
 Route::get('/admin/viewAcara/upload', [ViewController::class, 'viewAdminAcaraUpload']);
 Route::get('/admin/viewAcara/edit', [ViewController::class, 'viewAdminAcaraEdit']);
-Route::post('/admin/viewAcara/edit2', [App\Http\Controllers\AdminController::class, 'edit']);
+Route::post('/admin/viewAcara/edit2', [App\Http\Controllers\AdminController::class, 'editAcara']);
+Route::post('/admin/viewOrganisasi/edit', [App\Http\Controllers\ViewController::class, 'editOrganisasi']);
 
 Route::post('/admin/viewAcara/upload/create', [App\Http\Controllers\AdminController::class, 'createAcara']);
 Route::post('/admin/viewOrganisasi/edit/create', [App\Http\Controllers\AdminOrganisasiController::class, 'createOrganisasi']);
@@ -58,5 +59,3 @@ Route::get('/admin/viewOrganisasi', [ViewController::class, 'viewAdminOrganisasi
 
 Route::get('/admin/viewOrganisasi/edit', [ViewController::class, 'viewAdminOrganisasiEdit']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-

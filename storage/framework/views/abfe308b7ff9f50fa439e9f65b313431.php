@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/acaraEdit.css">
+    <link rel="stylesheet" href="/assets/css/upload-admin-organisasi.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/322f056c55.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
@@ -44,9 +44,9 @@
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
                     <div class="text">
-                        <h4>Mielola</h4>
+                        <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
-                    </div>
+                      </div>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                     <?php echo csrf_field(); ?>
                     <div class="satu">
                         <div class="namaAcara">
-                            <label for="">Nama Acara</label>
+                            <label for="">Nama Organisasi</label>
                             <input type="text" class="inputan" name="nama">
                         </div>
                         <div class="Deskripsi">
@@ -122,6 +122,20 @@
                     fileinput.click();
                 });
             </script>
+            <script>
+            let uploadButton = document.getElementById("pilih");
+            let chosenImage = document.getElementById("chosen-image");
+            let fileName = document.getElementById("file-name");
+
+            uploadButton.onchange = () => {
+            let reader = new FileReader();
+            reader.readAsDataURL(uploadButton.files[0]);
+            reader.onload = () => {
+            chosenImage.setAttribute("src",reader.result);
+    }
+            fileName.textContent = uploadButton.files[0].name;
+}
+        </script>
 </body>
 
 </html>
