@@ -13,7 +13,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 130vh;
     background: var(--Background) url("/assets/pics/bg.png");
     background-repeat: no-repeat;
     background-position-y: 400px;
@@ -109,9 +109,10 @@ nav ul li button:hover {
 
 .beranda {
     position: relative;
-    display: grid;
-    grid-template-columns: auto auto;
-    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-left: 170px;
+    width: 80%;
     height: fit-content;
     margin-top: 160px;
 }
@@ -123,7 +124,8 @@ nav ul li button:hover {
 }
 
 .foto1 {
-    margin-right: 150px;
+    width: 300px;
+    height: 300px;
 }
 
 .gmbr1{

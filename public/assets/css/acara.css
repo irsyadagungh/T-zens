@@ -11,18 +11,7 @@ html {
     background-color: #d9edf8;
 }
 
-button {
-    background-color: #0081c9;
-    color: #d9edf8;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
-    width: 200px;
-    transition: 0.5s;
-    font-size: 15px;
-    padding: 5px;
-    text-decoration: none;
-}
+
 .button {
     background-color: #0081c9;
     color: #d9edf8;
@@ -167,6 +156,15 @@ nav ul li .button:hover {
 }
 
 /* Section 3 */
+.div{
+    padding: 0;
+    width: 13%;
+    border: none;
+}
+.div h5{
+    text-align: left;
+}
+
 .sec-3 {
     width: 90%;
     height: fit-content;
@@ -177,8 +175,8 @@ nav ul li .button:hover {
 
 .sec-3 .card {
     background-color: white;
-    width: 13%;
-    margin: 0 20px;
+    width: 100%%;
+    margin: 0 ;
     height: 350px;
     border-radius: 10px;
     display: flex;

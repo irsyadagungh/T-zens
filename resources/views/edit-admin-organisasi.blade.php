@@ -56,23 +56,21 @@
             </div>
 
             <?php
-            session_start();
-                $server = 'localhost';
-                $username = 'root';
-                $pass = '';
-                $dbname = 'tzens';
+session_start();
+$server = 'localhost';
+$username = 'root';
+$pass = '';
+$dbname = 'tzens';
 
-                $conn = mysqli_connect($server, $username, $pass, $dbname);
+$conn = mysqli_connect($server, $username, $pass, $dbname);
 
-                if(isset($_GET['edit'])){
-                    $id = $_GET['edit'];
-                    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
-                    $data = mysqli_fetch_array($query);
-                    }
+if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $query = mysqli_query($conn, "SELECT * FROM organisasi WHERE id = $id");
+    $data = mysqli_fetch_array($query);
+}
+?>
 
-
-
-            ?>
 
             <section class="bungkus">
                 <form action="/admin/viewOrganisasi/edit3" method="post" enctype="multipart/form-data"
@@ -87,7 +85,7 @@
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan">{{ $data['deskripsi'] }}</textarea>
+                            <textarea name="deskripsi" id="myTextarea" maxlength="1000" cols="30" rows="10" class="inputan" value="">{{ $data['deskripsi'] }}</textarea>
                         </div>
                         {{-- DIV JADWAL --}}
                         <div class="tipeAcara">
@@ -159,6 +157,18 @@
                     }
                     fileName.textContent = uploadButton.files[0].name;
                 }
+
+                // TEXT AREA
+                const textarea = document.getElementById("myTextarea");
+
+        textarea.addEventListener("input", () => {
+            const maxLength = parseInt(textarea.getAttribute("maxlength"));
+            const currentLength = textarea.value.length;
+
+            if (currentLength > maxLength) {
+                textarea.value = textarea.value.slice(0, maxLength);
+            }
+        });
             </script>
 </body>
 

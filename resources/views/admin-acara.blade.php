@@ -48,31 +48,31 @@
                     </div>
                 </div>
 
-                @php
-                    session_start();
-                    $server = 'localhost';
-                    $username = 'root';
-                    $pass = '';
-                    $dbname = 'tzens';
-
-                    $conn = mysqli_connect($server, $username, $pass, $dbname);
-
-                    if (!$conn) {
-                        die('Connection failed : ' . mysqli_connect_error());
-                    }
-
-                    $query = mysqli_query($conn, 'SELECT * FROM acara');
-                    $acara = mysqli_fetch_assoc($query);
-                @endphp
-
                 <?php
-                $acara = mysqli_fetch_assoc($query);
-                ?>
+    session_start();
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
 
-                <?php while ($acara = mysqli_fetch_assoc($query)):
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
 
-            $foto = "/assets/pictures/".$acara['foto'];
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
+
+    $query = mysqli_query($conn, 'SELECT * FROM acara');
+
+    if (!$query) {
+        die('Query error: ' . mysqli_error($conn));
+    }
 ?>
+
+<?php while ($acara = mysqli_fetch_assoc($query)): ?>
+
+    <?php
+        $foto = "/assets/pictures/".$acara['foto'];
+    ?>
                 <form action="" method="get">
                     @csrf
                     <div class="kolom">

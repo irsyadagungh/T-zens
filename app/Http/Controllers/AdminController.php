@@ -170,7 +170,7 @@ class AdminController extends Controller
             $targetFile = $targetDir . $gambar;
             move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFile);
 
-            $query = "UPDATE `organisasi` SET `nama` = '$nama', `jadwal` = '$jadwal', `judul_info` = '$judul', `info` = '$info', `benefit` = '$benefit', `foto` = '$gambar', `created_at` = NULL, `updated_at` = NULL WHERE `organisasi`.`id` = $id";
+            $query = "UPDATE `organisasi` SET `nama` = '$nama',`deskripsi` = '$deskripsi', `jadwal` = '$jadwal', `judul_info` = '$judul', `info` = '$info', `benefit` = '$benefit', `foto` = '$gambar', `created_at` = NULL, `updated_at` = NULL WHERE `organisasi`.`id` = $id";
 
             $hasil = mysqli_query($conn, $query);
             if ($hasil) {
@@ -183,8 +183,8 @@ class AdminController extends Controller
             }
 
 
-            return redirect('/admin/viewOrganisasi');
         }
+        return redirect('/admin/viewOrganisasi');
     }
 
     public function editOrgan()

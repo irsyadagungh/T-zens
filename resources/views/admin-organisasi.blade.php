@@ -20,6 +20,7 @@
                 <li><a href="#"><i class="fas fa-map-pin"></i>Organisasi</a></li>
             </ul>
         </div>
+
         <!-- ATAS -->
         <div class="main_content">
             <div class="header">
@@ -47,60 +48,57 @@
                     </div>
                 </div>
 
-                @php
-                    session_start();
-                    $server = 'localhost';
-                    $username = 'root';
-                    $pass = '';
-                    $dbname = 'tzens';
-
-                    $conn = mysqli_connect($server, $username, $pass, $dbname);
-
-                    if (!$conn) {
-                        die('Connection failed : ' . mysqli_connect_error());
-                    }
-
-                    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
-                    $organisasi = mysqli_fetch_assoc($query);
-                @endphp
-
                 <?php
-                $organisasi = mysqli_fetch_assoc($query);
-                ?>
+    session_start();
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
 
-                <?php while ($organisasi = mysqli_fetch_assoc($query)):
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
+    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
 
-            $foto = "/assets/pictures/".$organisasi['foto'];
+    if (!$query) {
+        die('Query error: ' . mysqli_error($conn));
+    }
 ?>
-                 <form action="" method="get">
-                    <div class="kolom">
-                        <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
-                            name="foto organisasi">
-                        <div class="isi">
-                            <h3 class="cont" name="judul"> {{ $organisasi['nama'] }} </a> </h3>
-                            <p>{{ $organisasi['deskripsi'] }}3</p>
-                        </div>
-                        <div class="like">
-                            <button class="lihat" name="hapus" value="{{ $organisasi['id'] }}">Hapus</button>
-                </form>
-                <form action="/admin/viewOrganisasi/edit">
-                    <button type="submit" class="edit" name="edit" value="{{ $organisasi['id'] }}">Edit</button>
-                </form>
-            </div>
-        </div>
 
-        <hr>
-        <?php endwhile; ?>
-        <?php
-        if (isset($_GET['hapus'])) {
-            $id = $_GET['hapus'];
-            $query = mysqli_query($conn, "DELETE FROM `organisasi` WHERE id = $id");
-            if ($query) {
-                echo "<script>alert('Data berhasil dihapus');</script>";
-                echo "<script>window.location.href='/admin/viewOrganisasi';</script>";
-            }
-        }
-        ?>
+<?php while ($organisasi = mysqli_fetch_assoc($query)): ?>
+
+    <?php
+        $foto = "/assets/pictures/".$organisasi['foto'];
+    ?>
+
+<form action="" method="get">
+    <div class="kolom">
+        <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
+            name="foto organisasi">
+        <div class="isi">
+            <h3 class="cont" name="judul"> {{ $organisasi['nama'] }} </a> </h3>
+            <p>{{ $organisasi['deskripsi'] }}</p>
+        </div>
+        <div class="like">
+            <button class="lihat" name="hapus" value="{{ $organisasi['id'] }}">Hapus</button>
+</form>
+<form action="/admin/viewOrganisasi/edit">
+    <button type="submit" class="edit" name="edit" value="{{ $organisasi['id'] }}">Edit</button>
+</form>
+</div>
+</div>
+
+<hr>
+<?php endwhile; ?>
+<?php
+if (isset($_GET['hapus'])) {
+$id = $_GET['hapus'];
+$query = mysqli_query($conn, "DELETE FROM `organisasi` WHERE id = $id");
+if ($query) {
+echo "<script>alert('Data berhasil dihapus');</script>";
+echo "<script>window.location.href='/admin/viewOrganisasi';</script>";
+}
+}
+?>
+
     </div>
     </div>
     <div class="upload">
@@ -109,8 +107,6 @@
             <span>Upload</span>
         </button>
     </div>
-
-
 </body>
 
 </html>

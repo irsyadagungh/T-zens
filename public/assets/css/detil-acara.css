@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+    padding: 0;
+    margin: 0;
 }
 
 .atas {
   background: rgba(217, 237, 248, 0.79);
-  height: 580px;
+  width: 100%;
+  height: 25%;
+  display: flex;
 }
+.main-atas{
+    display: flex;
+    padding: 10px;
+
+}
+
+.main-bawah{
+    margin-bottom: 1000px;
+}
+.extra-art{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
 
 .logo {
   position: absolute;
@@ -16,13 +40,15 @@
   background-color: none;
 }
 .name-page {
-  position: absolute;
-  width: 138px;
+display: flex;
+margin-left: 100px;
+margin-top: 150px;
+width: 150px;
   height: 23px;
   left: 122px;
   top: 146px;
 
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -31,14 +57,31 @@
   color: #000000;
 }
 
+.waktu{
+    margin-left: 500px;
+margin-top: 200px;
+}
+
+.tanggal{
+    margin-bottom:10px ;
+}
+.jamnya{
+    margin-left: 500px;
+margin-top: 30px;
+}
+
+.jam{
+    margin-bottom:10px ;
+}
+
 .judul-acara {
   position: absolute;
-  width: 150px;
+  width: 200px;
   height: 24px;
   left: 487px;
   top: 205px;
 
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -48,13 +91,16 @@
 }
 
 .list-benefit {
-  position: absolute;
-  width: 150px;
+display: flex;
+margin-top: 270px;
+margin-left: 250px;
+    width: 150px;
+    font-family: ;
   height: 57px;
   left: 487px;
   top: 275px;
 
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -63,9 +109,17 @@
   color: #000000;
 }
 
-.poster {
-  position: absolute;
-  width: 251px;
+
+
+.poster{
+    display: flex;
+    margin-left: -500px
+}
+.poster img{
+    margin-top: 200px;
+    margin-left: 10px;
+    display: flex;
+    width: 251px;
   height: 348px;
   left: 60px;
   top: 105px;
@@ -99,23 +153,46 @@
 }
 
 .bawah {
-  position: absolute;
-  width: 1440px;
+  position: relative;
+  display: flex;
+  width: 100%;
   height: 1597px;
   left: 0px;
-  top: 580px;
+
 
   background: #fffffe;
 }
+
+.photo-ireng img{
+    width: 20%;
+    position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+    height: fit-content;
+    background-color: white;
+    box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+        border-radius: 20px;
+}
 .shape-left {
-  position: absolute;
-  width: 394px;
-  height: 400px;
-  left: 122px;
-  top: 180px;
-  background: #d9edf8;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
+    width: 20%;
+    background-color: #0083c95b;
+    position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+        margin-top: 100px;
+        margin-left: 100px;
+    height: fit-content;
+    box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 }
 
 .judul-shape {
@@ -124,7 +201,7 @@
   height: 39px;
   left: 107px;
   top: 25px;
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -132,33 +209,8 @@
   color: #000000;
 }
 
-.arrow-1 {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 46px;
-  top: 130px;
-}
-.arrow-2 {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 46px;
-  top: 190px;
-}
-.arrow-3 {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 46px;
-  top: 250px;
-}
-.arrow-4 {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 46px;
-  top: 310px;
+.detail{
+    display: flex;
 }
 
 .isi-1 {
@@ -167,7 +219,7 @@
   height: 24px;
   left: 95px;
   top: 130px;
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -180,7 +232,7 @@
   height: 24px;
   left: 95px;
   top: 190px;
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -193,7 +245,7 @@
   height: 24px;
   left: 95px;
   top: 250px;
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -206,7 +258,7 @@
   height: 24px;
   left: 95px;
   top: 310px;
-  font-family: "Inter";
+
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -252,25 +304,46 @@
 }
 
 .foto-bawah {
-  position: absolute;
-  width: 352px;
-  height: 456px;
-  left: 100px;
-  top: 1000px;
+    width: 20%;
+    background-color: #0083c95b;
+    position: -webkit-sticky;
+        position: sticky;
+        top: 100px;
+        margin-top: 100px;
+        margin-left: 100px;
+    height: fit-content;
+    box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 }
 
 .kata-kata {
-  position: absolute;
+  position: relative;
   width: 706px;
   height: 850px;
-  left: calc(50% - 706px / 2 + 241px);
-  top: 130px;
-  font-family: "Inter";
+  left: 200px;
+  bottom: 130px;
+
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 20px;
   line-height: 34px;
   display: flex;
   align-items: center;
   color: #000000;
+}
+
+hr{
+    border-color: #0000004f;
+}
+
+.judul{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 00;
 }

@@ -47,7 +47,7 @@
         <div class="teks">
             <h1>Temukan dan Ikuti acara untuk mengembangkan
                 Bakat Kalian</h1>
-            <a href="#acara"><button>Cari Acara</button></a>
+            <a href="#acara"><button class="button">Cari Acara</button></a>
         </div>
     </section>
 
@@ -65,32 +65,35 @@
 
     <section class="sec-3" id="acara">
 
-        @php
-            session_start();
-            $server = 'localhost';
-            $username = 'root';
-            $pass = '';
-            $dbname = 'tzens';
-
-            $conn = mysqli_connect($server, $username, $pass, $dbname);
-
-            if (!$conn) {
-                die('Connection failed : ' . mysqli_connect_error());
-            }
-
-            $query = mysqli_query($conn, 'SELECT * FROM acara');
-            $acara = mysqli_fetch_assoc($query);
-        @endphp
-
         <?php
-        $acara = mysqli_fetch_assoc($query);
-        ?>
+    session_start();
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
 
-        <?php while ($acara = mysqli_fetch_assoc($query)):
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
 
-            $foto = "/assets/pictures/".$acara['foto'];
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
+
+    $query = mysqli_query($conn, 'SELECT * FROM acara');
+
+    if (!$query) {
+        die('Query error: ' . mysqli_error($conn));
+    }
 ?>
-        <div class="card" onclick="window.location.href='{{ url('/acara/detil-acara') }}'">
+
+<?php while ($acara = mysqli_fetch_assoc($query)): ?>
+
+    <?php
+        $foto = "/assets/pictures/".$acara['foto'];
+    ?>
+
+
+    <button name="klik" class="div" onclick="window.location.href='{{ url('/acara/detil-acara') }}'" value="{{$acara['id']}}">
+        <div class="card" >
             <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="Foto" />
             <div class="teks">
                 <h5>
@@ -107,6 +110,7 @@
                 </div>
             </div>
         </div>
+    </button>
         <?php endwhile; ?>
     </section>
 

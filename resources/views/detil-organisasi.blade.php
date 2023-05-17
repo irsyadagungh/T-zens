@@ -12,48 +12,54 @@
 </head>
 
 <body>
-    <img src="/assets/pics/BEM3.png" alt="" class="bg" name="fotp beranda dalam">
+    <?php
+
+        session_start();
+                $server = 'localhost';
+                $username = 'root';
+                $pass = '';
+                $dbname = 'tzens';
+
+                $conn = mysqli_connect($server, $username, $pass, $dbname);
+
+                if (!$conn) {
+                    die('Connection failed : ' . mysqli_connect_error());
+                }
+
+                $query = mysqli_query($conn, 'SELECT * FROM organisasi');
+                $data= mysqli_fetch_assoc($query);
+
+                if (isset($_GET['klik'])) {
+                 $id = $_GET['klik'];
+                 $query = mysqli_query($conn, "SELECT * FROM organisasi WHERE id = '$id'");
+                $data = mysqli_fetch_assoc($query);
+                }
+
+        ?>
+    <img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image" class="bg">
     <section class="sec-2">
         <div class="text" name="isi beranda dalam">
-            <p>Halo Warga KEMA Tel-U!
-
-                Telah dibuka kembali pendaftaran STAF BEM KEMA Tel-U 2023. Dan kami membuka pendaftaran STAF MAGANG
-                untuk mahasiswa/i Tel-U angkatan 2022 sebagai kesempatan untuk kamu yang ingin menjadi bagian dari BEM
-                KEMA Tel-U 2023. Tunggu apalagi? Yuk daftarkan dirimu, segera!
-                <br><br>
-                Periode pendaftaran & pengumpulan berkas : 24 Februari - 5 Maret 2023
-                <br><br>
-                Link Pendaftaran :
-                <br><br>
-                lynk.id/bemtelu
+            <p class="judif">{{$data['judul_info']}}</p>
+            <p>{{$data['info']}}
             </p>
         </div>
         <div class="detail">
             <div class="faq">
                 <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Apa itu BEM?</button>
                 <div class="panel">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Accusantium aliquid adipisci neque distinctio doloremque corporis
-                        eveniet debitis vel veritatis consequatur facilis sed suscipit vero iusto at commodi,
-                        dolor a officiis!</p>
+                    <p>{{$data['deskripsi']}}</p>
                     </div>
                 </div>
                 <div class="faq">
-                <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Siapa saja anggotanya?</button>
+                <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Benefit</button>
                 <div class="panel">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Accusantium aliquid adipisci neque distinctio doloremque corporis
-                        eveniet debitis vel veritatis consequatur facilis sed suscipit vero iusto at commodi,
-                        dolor a officiis!</p>
+                    <p>{{$data['benefit']}}</p>
                     </div>
                 </div>
                 <div class="faq">
                 <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Kapan jadwal pertemuan</button>
                 <div class="panel">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Accusantium aliquid adipisci neque distinctio doloremque corporis
-                        eveniet debitis vel veritatis consequatur facilis sed suscipit vero iusto at commodi,
-                        dolor a officiis!</p>
+                    <p>{{$data['jadwal']}}</p>
                     </div>
                 </div>
             <button class="button" onclick="window.location.href='done.html'">Register Now</button>

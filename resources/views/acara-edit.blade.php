@@ -90,7 +90,7 @@
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['deskripsi'] }}</textarea>
+                            <textarea name="deskripsi" id="myTextarea" maxlength="1000" cols="30" rows="10" class="inputan" value="">{{ $acara['deskripsi'] }}</textarea>
                         </div>
                         <div class="tipeAcara">
                             <label for="">Tipe Acara</label>
@@ -103,7 +103,7 @@
                         <div class="Benefit">
                             <label for="">Benefit</label>
                             {{-- KALO SALAH ADA DISINI --}}
-                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['benefit'] }}</textarea>
+                            <textarea name="benefit" id="myTextarea" maxlength="1000" cols="30" rows="10" class="inputan" value="">{{ $acara['benefit'] }}</textarea>
                         </div>
                         <div class="subscription">
                             <label for="">Subscribe</label>
@@ -167,6 +167,19 @@
                     }
                     fileName.textContent = uploadButton.files[0].name;
                 }
+
+
+                // TEXT AREA
+                const textarea = document.getElementById("myTextarea");
+
+        textarea.addEventListener("input", () => {
+            const maxLength = parseInt(textarea.getAttribute("maxlength"));
+            const currentLength = textarea.value.length;
+
+            if (currentLength > maxLength) {
+                textarea.value = textarea.value.slice(0, maxLength);
+            }
+        });
             </script>
 </body>
 

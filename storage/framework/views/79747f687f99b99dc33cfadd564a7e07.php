@@ -42,41 +42,36 @@
 
 
     <?php
-        session_start();
-        $server = 'localhost';
-        $username = 'root';
-        $pass = '';
-        $dbname = 'tzens';
+    session_start();
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
 
-        $conn = mysqli_connect($server, $username, $pass, $dbname);
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
 
-        if (!$conn) {
-            die('Connection failed : ' . mysqli_connect_error());
-        }
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
 
-        $query = mysqli_query($conn, 'SELECT * FROM organisasi');
-        $organisasi = mysqli_fetch_assoc($query);
-    ?>
+    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
 
-    <?php
-    $acara = mysqli_fetch_assoc($query);
-    ?>
+    if (!$query) {
+        die('Query error: ' . mysqli_error($conn));
+    }
+?>
+
+
 
 
     <div class="beranda">
         <div class="col-1">
-            <h2 class="judul" name="judul beranda">Di BUKA KEMBALI PENDAFTARAN STAF & MAGANG</h2>
-            <p class="isi1" name="isi beranda">Halo Warga KEMA Tel-U!
-                Telah dibuka kembali pendaftaran STAF BEM KEMA Tel-U 2023. Dan kami membuka pendaftaran STAF MAGANG
-                untuk mahasiswa/i Tel-U angkatan 2022 sebagai kesempatan untuk kamu yang ingin menjadi bagian dari BEM
-                KEMA Tel-U 2023. Tunggu apalagi? Yuk daftarkan dirimu, segera!
+            <h2 class="judul" name="judul beranda">Apa itu Organisasi ?</h2>
+            <p class="isi1" name="isi beranda">Organisasi ialah merupakan salah satu perkumpulan orang-orang yang telah di bentuk dalam sebuah kelompok yang mana kelompok atau organisasi ini bertugas untuk saling bekerjasama demi menggapai keberhasilan dan tujuan bersama.
 
-                Periode pendaftaran & pengumpulan berkas : 24 Februari - 5 Maret 2023
-                Link Pendaftaran: lynk.id/bemtelu</p>
-            <button class="btn"
-                onclick="window.location.href='<?php echo e(url('/organisasi/detil-organisasi')); ?>'">Lihat</button>
+                Arti dari kata organisasi ini adalah bentuk pembagian kerja antar sekelompok orang yang melakukan kerja sama dengan cara tertentu untuk menggapai tujuan dan cita-cita bersama-sama.</p>
         </div>
-        <img src="/assets/pics/BEM.png" alt="" class="foto1">
+        <img src="/assets/pics/organ.png" alt="" class="foto1">
     </div>
     <div class="bungkus">
         <?php while ($organisasi = mysqli_fetch_assoc($query)):
