@@ -156,9 +156,40 @@ class AdminController extends Controller
             die("Connection failed: " . mysqli_connect_error());
         }
 
-        if (isset($_POST['edit'])) {
-            # code...
+        if (isset($_POST['submit'])) {
+            $id = $_POST['id'];
+            $nama = $_POST['nama'];
+            $deskripsi = $_POST['deskripsi'];
+            $jadwal = $_POST['jadwal'];
+            $judul = $_POST['judul_info'];
+            $info = $_POST['info'];
+            $benefit = $_POST['benefit'];
+
+            $targetDir = "assets/pictures/";
+            $gambar = basename($_FILES['foto']['name']);
+            $targetFile = $targetDir . $gambar;
+            move_uploaded_file($_FILES["foto"]["tmp_name"], $targetFile);
+
+            $query = "UPDATE `organisasi` SET `nama` = '$nama', `jadwal` = '$jadwal', `judul_info` = '$judul', `info` = '$info', `benefit` = '$benefit', `foto` = '$gambar', `created_at` = NULL, `updated_at` = NULL WHERE `organisasi`.`id` = $id";
+
+            $hasil = mysqli_query($conn, $query);
+            if ($hasil) {
+                // Jalankan kueri SELECT untuk mendapatkan data acara yang diperbarui
+                $selectQuery = mysqli_query($conn, "SELECT * FROM `organisasi` WHERE `id` = $id");
+                $acara = mysqli_fetch_assoc($selectQuery);
+                // Lanjutkan penggunaan variabel $acara dengan data yang diperbarui
+            } else {
+                // Penanganan kesalahan jika UPDATE gagal
+            }
+
+
+            return redirect('/admin/viewOrganisasi');
         }
+    }
+
+    public function editOrgan()
+    {
+        return view('edit-admin-organisasi');
     }
 
 }

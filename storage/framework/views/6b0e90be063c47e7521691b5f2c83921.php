@@ -35,7 +35,7 @@
                     <div class="text">
                         <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
-                      </div>
+                    </div>
                 </div>
             </div>
 
@@ -75,45 +75,43 @@
 ?>
                 <form action="" method="get">
                     <?php echo csrf_field(); ?>
-                <div class="kolom">
-                    <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
-                        name="foto organisasi">
-                    <div class="isi">
-                        <h3 class="cont" name="judul"> <?php echo e($acara['nama']); ?> </h3>
-                        <p><?php echo e($acara['deskripsi']); ?></p>
-                    </div>
-                    <div class="like">
-                        <button class="lihat" name="hapus" value="<?php echo e($acara['id']); ?>">Hapus</button>
+                    <div class="kolom">
+                        <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="" class="gmbr1"
+                            name="foto organisasi">
+                        <div class="isi">
+                            <h3 class="cont" name="judul"> <?php echo e($acara['nama']); ?> </h3>
+                            <p><?php echo e($acara['deskripsi']); ?></p>
+                        </div>
+                        <div class="like">
+                            <button class="lihat" name="hapus" value="<?php echo e($acara['id']); ?>">Hapus</button>
 
-                    </form>
-                            <form action="/admin/viewAcara/edit">
-                        <button type="submit"
-                                class="edit" name="edit" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/edit')); ?>'" value="<?php echo e($acara['id']); ?>">Edit</button>
-                            </form>
-                </div>
-                    </div>
-
-                <hr>
-                <?php endwhile; ?>
-                    <?php
-                    if(isset($_POST['hapus'])){
-                        $id = $_POST['hapus'];
-                        $query = mysqli_query($conn, "DELETE FROM acara WHERE id = $id");
-                        if ($query) {
-                            echo "<script>alert('Data berhasil dihapus');</script>";
-                            echo "<script>window.location.href='/admin/viewAcara';</script>";
-                            }
-
-                    }
-                    ?>
+                </form>
+                <form action="/admin/viewAcara/edit">
+                    <button type="submit" class="edit" name="edit" value="<?php echo e($acara['id']); ?>">Edit</button>
+                </form>
             </div>
         </div>
-        <div class="upload">
-            <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
-                +
-                <span>Upload</span>
-            </button>
-        </div>
+
+        <hr>
+        <?php endwhile; ?>
+        <?php
+        if (isset($_GET['hapus'])) {
+            $id = $_GET['hapus'];
+            $query = mysqli_query($conn, "DELETE FROM `acara` WHERE id = $id");
+            if ($query) {
+                echo "<script>alert('Data berhasil dihapus');</script>";
+                echo "<script>window.location.href='/admin/viewAcara';</script>";
+            }
+        }
+        ?>
+    </div>
+    </div>
+    <div class="upload">
+        <button class="btn-floating" onclick="window.location.href='<?php echo e(url('/admin/viewAcara/upload')); ?>'">
+            +
+            <span>Upload</span>
+        </button>
+    </div>
 
 
 </body>

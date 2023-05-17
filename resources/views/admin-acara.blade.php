@@ -54,13 +54,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-                    
+
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-                    
+
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-                    
+
                     $query = mysqli_query($conn, 'SELECT * FROM acara');
                     $acara = mysqli_fetch_assoc($query);
                 @endphp

@@ -20,7 +20,6 @@
                 <li><a href="#"><i class="fas fa-map-pin"></i>Organisasi</a></li>
             </ul>
         </div>
-
         <!-- ATAS -->
         <div class="main_content">
             <div class="header">
@@ -54,13 +53,13 @@
                     $username = 'root';
                     $pass = '';
                     $dbname = 'tzens';
-                    
+
                     $conn = mysqli_connect($server, $username, $pass, $dbname);
-                    
+
                     if (!$conn) {
                         die('Connection failed : ' . mysqli_connect_error());
                     }
-                    
+
                     $query = mysqli_query($conn, 'SELECT * FROM organisasi');
                     $organisasi = mysqli_fetch_assoc($query);
                 @endphp
@@ -73,8 +72,7 @@
 
             $foto = "/assets/pictures/".$organisasi['foto'];
 ?>
-
-                <form action="" method="get">
+                 <form action="" method="get">
                     <div class="kolom">
                         <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1"
                             name="foto organisasi">
@@ -91,6 +89,7 @@
             </div>
         </div>
 
+        <hr>
         <?php endwhile; ?>
         <?php
         if (isset($_GET['hapus'])) {
@@ -102,15 +101,16 @@
             }
         }
         ?>
-
     </div>
     </div>
     <div class="upload">
-        <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewOrganisasi/edit') }}'">
+        <button class="btn-floating" onclick="window.location.href='{{ url('/admin/viewOrganisasi/upload') }}'">
             +
             <span>Upload</span>
         </button>
     </div>
+
+
 </body>
 
 </html>

@@ -102,7 +102,8 @@
                         </div>
                         <div class="Benefit">
                             <label for="">Benefit</label>
-                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value=""><?php echo e($acara['deskripsi']); ?></textarea>
+                            
+                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value=""><?php echo e($acara['benefit']); ?></textarea>
                         </div>
                         <div class="subscription">
                             <label for="">Subscribe</label>

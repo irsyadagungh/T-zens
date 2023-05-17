@@ -52,34 +52,30 @@
 
             <!-- TENGAH -->
             <div class="judul">
-                <h3>Organisasi/Upload</h3>
+                <h3>Organisasi/Edit</h3>
             </div>
 
-            @php
-                session_start();
+            <?php
+            session_start();
                 $server = 'localhost';
                 $username = 'root';
                 $pass = '';
                 $dbname = 'tzens';
-                
+
                 $conn = mysqli_connect($server, $username, $pass, $dbname);
-                
-                if (!$conn) {
-                    die('Connection failed : ' . mysqli_connect_error());
-                }
-                
-                // $query = mysqli_query($conn, 'SELECT * FROM organisasi');
-                // $organisasi = mysqli_fetch_assoc($query);
-                
-                if (isset($_GET['edit'])) {
+
+                if(isset($_GET['edit'])){
                     $id = $_GET['edit'];
-                    $query = mysqli_query($conn, "SELECT * FROM organisasi WHERE id = '$id'");
-                    $organisasi = mysqli_fetch_assoc($query);
-                }
-            @endphp
+                    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
+                    $data = mysqli_fetch_array($query);
+                    }
+
+
+
+            ?>
 
             <section class="bungkus">
-                <form action="/admin/viewOrganisasi/edit/create" method="post" enctype="multipart/form-data"
+                <form action="/admin/viewOrganisasi/edit3" method="post" enctype="multipart/form-data"
                     class="form">
                     @csrf
                     <div class="satu">
@@ -87,33 +83,33 @@
                         <div class="namaAcara">
                             <label for="">Nama Organisasi</label>
                             <input type="text" class="inputan" name="nama"
-                                value="{{ $organisasi['nama'] ?? '' }}">
+                                value="{{ $data['nama'] ?? '' }}">
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan">{{}}</textarea>
+                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan">{{ $data['deskripsi'] }}</textarea>
                         </div>
                         {{-- DIV JADWAL --}}
                         <div class="tipeAcara">
                             <label for="">Jadwal</label>
-                            <input type="text" class="inputan" name="jadwal">
+                            <input type="text" class="inputan" name="jadwal" value="{{ $data['jadwal'] }}">
                         </div>
                         {{-- DIV JUDUL INFO --}}
                         <div class="Benefit">
                             <label for="">Judul info</label>
                             <input type="text" name="judul_info" id="" cols="30" rows="10"
-                                class="inputan">
+                                class="inputan" value="{{ $data['judul_info'] }}">
                         </div>
                         {{-- DIV INFO --}}
                         <div class="Benefit">
                             <label for="">Info</label>
                             <input type="text" name="info" id="" cols="30" rows="10"
-                                class="inputan">
+                                class="inputan" value="{{ $data['info'] }}">
                         </div>
                         {{-- DIV BENEFIT --}}
                         <div class="subscription">
                             <label for="">Benefit</label>
-                            <input type="text" class="inputan" name="benefit">
+                            <input type="text" class="inputan" name="benefit" value="{{ $data['benefit'] }}">
                         </div>
                     </div>
                     <div class="dua">
@@ -124,6 +120,7 @@
                         <div class="form2">
                             <figure class="row-1">
                                 <img src="/assets/pics/upfile.png" alt="" class="iconn">
+                                <img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image">
 
                                 <img id="chosen-image">
                                 <figcaption class="file-name" id="file-name">
@@ -133,6 +130,7 @@
                                     name="foto">
                             </figure>
                             <div class="sub">
+                                <input type="text" name="id" hidden value="{{$data['id']}}">
                                 <input type="submit" class="upload kursor" name="submit">
                             </div>
                         </div>

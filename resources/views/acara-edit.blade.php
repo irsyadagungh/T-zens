@@ -102,7 +102,8 @@
                         </div>
                         <div class="Benefit">
                             <label for="">Benefit</label>
-                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['deskripsi'] }}</textarea>
+                            {{-- KALO SALAH ADA DISINI --}}
+                            <textarea name="benefit" id="" cols="30" rows="10" class="inputan" value="">{{ $acara['benefit'] }}</textarea>
                         </div>
                         <div class="subscription">
                             <label for="">Subscribe</label>

@@ -46,26 +46,48 @@
                     <div class="text">
                         <h4><?php echo e(session()->get('success')); ?></h4>
                         <p>Super Admin</p>
-                      </div>
+                    </div>
                 </div>
             </div>
 
             <!-- TENGAH -->
             <div class="judul">
-                <h3>Organisasi/Upload</h3>
+                <h3>Organisasi/Edit</h3>
             </div>
+
+            <?php
+            session_start();
+                $server = 'localhost';
+                $username = 'root';
+                $pass = '';
+                $dbname = 'tzens';
+
+                $conn = mysqli_connect($server, $username, $pass, $dbname);
+
+                if(isset($_GET['edit'])){
+                    $id = $_GET['edit'];
+                    $query = mysqli_query($conn, 'SELECT * FROM organisasi');
+                    $data = mysqli_fetch_array($query);
+                    }
+
+
+
+            ?>
+
             <section class="bungkus">
                 <form action="/admin/viewOrganisasi/edit/create" method="post" enctype="multipart/form-data"
                     class="form">
                     <?php echo csrf_field(); ?>
                     <div class="satu">
+
                         <div class="namaAcara">
                             <label for="">Nama Organisasi</label>
-                            <input type="text" class="inputan" name="nama">
+                            <input type="text" class="inputan" name="nama"
+                                value="<?php echo e($data['nama'] ?? ''); ?>">
                         </div>
                         <div class="Deskripsi">
                             <label for="">Deskripsi</label>
-                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan"></textarea>
+                            <textarea name="deskripsi" id="" cols="30" rows="10" class="inputan"><?php echo e($data['deskripsi']); ?></textarea>
                         </div>
                         
                         <div class="tipeAcara">
@@ -123,19 +145,19 @@
                 });
             </script>
             <script>
-            let uploadButton = document.getElementById("pilih");
-            let chosenImage = document.getElementById("chosen-image");
-            let fileName = document.getElementById("file-name");
+                let uploadButton = document.getElementById("pilih");
+                let chosenImage = document.getElementById("chosen-image");
+                let fileName = document.getElementById("file-name");
 
-            uploadButton.onchange = () => {
-            let reader = new FileReader();
-            reader.readAsDataURL(uploadButton.files[0]);
-            reader.onload = () => {
-            chosenImage.setAttribute("src",reader.result);
-    }
-            fileName.textContent = uploadButton.files[0].name;
-}
-        </script>
+                uploadButton.onchange = () => {
+                    let reader = new FileReader();
+                    reader.readAsDataURL(uploadButton.files[0]);
+                    reader.onload = () => {
+                        chosenImage.setAttribute("src", reader.result);
+                    }
+                    fileName.textContent = uploadButton.files[0].name;
+                }
+            </script>
 </body>
 
 </html>

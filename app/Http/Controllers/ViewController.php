@@ -85,6 +85,10 @@ class ViewController extends Controller
     }
     public function viewAdminOrganisasiEdit()
     {
-        return view('upload-admin-organisasi');
+        return view('edit-admin-organisasi');
+    }
+    public function uploadOrganisasi()
+    {
+        return view('upload-organisasi');
     }
 }
