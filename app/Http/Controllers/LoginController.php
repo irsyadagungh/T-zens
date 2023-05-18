@@ -63,6 +63,7 @@ class LoginController extends Controller
 
         if (isset($_POST["submit"])) {
             $username = $_POST["username"];
+            $nama = $_POST["nama"];
             $password = addslashes(trim($_POST['password']));
             $query = "SELECT status FROM pengguna WHERE username = '$username'";
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
@@ -78,9 +79,12 @@ class LoginController extends Controller
                     $result2 = mysqli_query($conn, $query);
                     if ($_SESSION["stat"] == 'admin') {
                         Session::put('success', $username);
+                        $_SESSION['nama'] = $row['nama'];
                         return redirect('/dashboard/view');
                     } else {
                         Session::put('success2', $username);
+                        // jika error disini
+                        $_SESSION['id'] = $row['id'];
                         echo "<script>
                     alert('Kamu gk masuk');
                         window.location.href = '/';

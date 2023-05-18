@@ -29,7 +29,7 @@ Route::post('/sign-up/add', [LoginController::class, 'add']);
 
 Route::get('/login/view', [ViewController::class, 'viewLogin']);
 Route::post('/login', [LoginController::class, 'login']);
-Route::get('/login/done', [ViewController::class, 'loginDone']);
+Route::post('/login/done', [ViewController::class, 'loginDone']);
 
 Route::get('/forgot', [ViewController::class, 'viewForgot']);
 

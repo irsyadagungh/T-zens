@@ -18,6 +18,7 @@ body{
 .main-atas{
     display: flex;
     padding: 10px;
+    width: 1005;
 
 }
 
@@ -347,3 +348,107 @@ hr{
     font-size: 1.2rem;
     font-weight: 00;
 }
+/* NAVBAR */
+
+.button2 {
+    background-color: #0081c9;
+    color: #d9edf8;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    gap: 50%;
+    width: 100%;
+    background-color: #abe0ffa9;
+    padding: 10px 0;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    margin-top: 0px;
+}
+
+nav div {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+}
+
+nav h4 {
+    margin: auto 0;
+    background: none;
+    letter-spacing: 1px;
+}
+
+nav img {
+    width: 50px;
+    height: fit-content;
+    background: none;
+}
+
+nav ul {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: auto;
+    background: none;
+}
+
+nav ul li {
+    list-style: none;
+    margin: auto 0;
+    cursor: pointer;
+    background: none;
+}
+nav ul li div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li .button {
+    border: none;
+    width: 60px;
+    height: 30px;
+    background-color: #0081c9;
+    box-shadow: 5px 5px 20px #0081c9;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: #d9edf8;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    box-shadow: 0 0 0 black;
+}
+.daftar {
+    box-shadow: 5px 5px 20px #0081c9;
+    color: white;
+    font-size: 0.8em;
+    margin-top: 0px;
+  }
+
+  .button3 {
+    border: none;
+    color: white;
+    font-size: 12px;
+
+    cursor: pointer;
+    background-color: #0081c9;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: small;
+  }

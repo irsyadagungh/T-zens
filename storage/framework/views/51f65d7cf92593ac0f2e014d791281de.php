@@ -18,7 +18,33 @@
 </head>
 
 <body>
+    <?php
 
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
+
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
+
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
+
+    // Cek apakah ada parameter pencarian dari inputan pengguna
+    if(isset($_GET['search'])) {
+        $search = $_GET['search'];
+        // Query untuk mencari acara berdasarkan nama atau tipe acara
+        $query = mysqli_query($conn, "SELECT * FROM acara WHERE nama LIKE '%$search%' OR tipe_acara LIKE '%$search%'");
+    } else {
+        // Query untuk menampilkan semua acara jika tidak ada parameter pencarian
+        $query = mysqli_query($conn, 'SELECT * FROM acara');
+    }
+
+    if (!$query) {
+        die('Query error: ' . mysqli_error($conn));
+    }
+?>
     <nav>
         <div>
             <img src="<?php echo e(asset('assets/pics/tzens-untexted.png')); ?>" alt="">
@@ -53,13 +79,13 @@
 
     <section class="sec-2">
         <div class="search">
-
             <span class="material-symbols-outlined">
                 search
             </span>
-
-            <input type="text" placeholder="Search" class="search-2">
-
+            <form action="" method="GET">
+                <input type="text" name="search" placeholder="Search" class="search-2">
+                <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+            </form>
         </div>
     </section>
 
@@ -92,7 +118,7 @@
     ?>
 
 
-    <button name="klik" class="div" onclick="window.location.href='<?php echo e(url('/acara/detil-acara')); ?>'" value="<?php echo e($acara['id']); ?>">
+
         <div class="card" >
             <img src="/assets/pictures/<?php echo $acara['foto']; ?>" alt="Foto" />
             <div class="teks">
@@ -110,8 +136,10 @@
                     <p><?php echo e($acara['subscription']); ?></p>
                 </div>
             </div>
+            <form action="/acara/detil-acara">
+                <button class="button" type="submit" class="edit" name="lihat" value="<?php echo e($acara['id']); ?>">Lihat</button>
+            </form>
         </div>
-    </button>
         <?php endwhile; ?>
     </section>
 

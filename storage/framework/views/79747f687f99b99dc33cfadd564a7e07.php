@@ -78,16 +78,15 @@
 
             $foto = "/assets/pictures/".$organisasi['foto'];
 ?>
-        <div class="kolom" onclick="window.location.href='<?php echo e(url('/organisasi/detil-organisasi')); ?>'">
+        <div class="kolom" >
             <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1" name="foto organisasi">
             <h3 class="cont" name="judul"> <?php echo e($organisasi['nama']); ?></a> </h3>
 
             <div class="like">
 
-                <span class="material-symbols-outlined icon" name="share">
-                    share
-                </span>
-                <i class="fa-regular fa-heart icon"></i>
+                <form action="/organisasi/detil-organisasi">
+                    <button class="button" type="submit" class="edit" name="lihat" value="<?php echo e($organisasi['id']); ?>">Lihat</button>
+                </form>
             </div>
         </div>
         <?php endwhile; ?>

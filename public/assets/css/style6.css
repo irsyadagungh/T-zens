@@ -1,227 +1,329 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&family=Poppins&family=Questrial&family=Satisfy&display=swap");
+
 :root {
-    --Background: #D8EEFE;
-    --biru-tua: #094067;
-    --abu-abu: #5f6c7b;
-    --white: #FFFFFE;
-    --biru-muda: #3da9fc;
+  --Background: #D8EEFE;
+  --biru-tua: #094067;
+  --abu-abu: #5f6c7b;
+  --white: #FFFFFE;
+  --biru-muda: #3da9fc;
 }
 
-
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    height: 100vh;
-    background-color: var(--Background);
-    font-family: 'Poppins', sans-serif;
-}
-
-.bg{
-    width: 100%;
-    background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+  height: 100vh;
+  background-color: var(--Background);
+  font-family: 'Poppins', sans-serif;
 }
 
 .faq {
-    margin: 0 auto;
-    width: 80%;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .accordion {
-    margin-top: 10px;
-    background: none;
-    border: none;
-    color: #444;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid black;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #444;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid black;
 }
 
 .panel p {
-    background: none;
+  background: none;
 }
 
 .active,
 .accordion:hover {
-    border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .panel {
-    padding: 0 18px;
-    background: none;
-    background: none;
-    max-height: 0;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-    text-align: left;
-    transition: max-height 0.2s ease-out;
+  padding: 0 18px;
+  background: none;
+  background: none;
+  max-height: 0;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  text-align: left;
+  transition: max-height 0.2s ease-out;
 }
 
-.text{
-    width: 20%;
-    position: -webkit-sticky;
-        position: sticky;
-        top: 100px;
-    height: fit-content;
-    background-color: white;
-    box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-        border-radius: 20px;
+.text {
+  width: 30%;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  background-color: white;
+  box-shadow: 9px 10px 10px -13px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 20px;
 }
 
-.sec-2{
-    padding: 100px 0px;
-    width: 100%;
-    height: 200vh;
-    display: flex;
-    justify-content: space-evenly;
-
+.sec-2 {
+  padding: 100px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
-.sec-3{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 100px 0;
-    gap: 100px;
+.sec-3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 100px 0;
+  gap: 100px;
 }
 
+.button3 {
+  border: none;
+  color: white;
+  font-size: 12px;
+
+  cursor: pointer;
+  background-color: #3da9fc;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px black;
+  font-size: small;
+}
 .button {
-    border: none;
-    color: white;
-    font-size: 12px;
-    margin: 100px auto auto 95px ;
-    cursor: pointer;
-    background-color: #3da9fc;
-    width: 150px;
-    height: 30px;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 1px 2px 5px black;
-    font-size: small;
-  }
-
-
-.detail{
-    width: 60%;
+  border: none;
+  color: white;
+  font-size: 12px;
+  margin: 100px auto auto 95px;
+  cursor: pointer;
+  background-color: #3da9fc;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px black;
+  font-size: small;
 }
+
+
+.detail {
+  width: 60%;
+}
+
 .shape-left {
-    position: absolute;
-    width: 394px;
-    height: 400px;
-    left: 122px;
-    top: 180px;
-    background: #d9edf8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+  position: absolute;
+  width: 394px;
+  height: 400px;
+  left: 122px;
+  top: 180px;
+  background: #d9edf8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
 }
-footer{
-    position: relative;
-    text-align: center;
-    background-color: rgb(40, 36, 36);
+
+
+
+.rek {
+  position: relative;
+  width: fit-content;
+  padding-left: 7%;
+}
+
+.rekomendasi {
+  background-color: white;
+  position: relative;
+  width: 30vh;
+  height: 40vh;
+  border-radius: 10px;
+}
+
+.fott{
+    display: flex;
+    justify-content: center;
+}
+
+.judif {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+
+.bg{
     width: 100%;
-    height: 10%;
+    margin-top: 80px;
+}
+
+
+
+
+
+.mbti {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+}
+
+.sub {
+  padding-top: 250px;
+  text-align: center;
+}
+
+/* NAVBAR */
+
+.button2 {
+    background-color: #0081c9;
+    color: #d9edf8;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    transition: 0.5s;
+    font-size: 15px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    gap: 50%;
+    width: 100%;
+    background-color: #abe0ffa9;
+    padding: 10px 0;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    margin-top: 0px;
+}
+
+nav div {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    gap: 10px;
+    background: none;
+}
+
+nav h4 {
+    margin: auto 0;
+    background: none;
+    letter-spacing: 1px;
+}
+
+nav img {
+    width: 50px;
+    height: fit-content;
+    background: none;
+}
+
+nav ul {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin: auto;
+    background: none;
+}
+
+nav ul li {
+    list-style: none;
+    margin: auto 0;
+    cursor: pointer;
+    background: none;
+}
+nav ul li div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul li .button {
+    border: none;
+    width: 60px;
+    height: 30px;
+    background-color: #0081c9;
+    box-shadow: 5px 5px 20px #0081c9;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: #d9edf8;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    box-shadow: 0 0 0 black;
+}
+
+.daftar {
+  box-shadow: 5px 5px 20px #0081c9;
+  color: white;
+  font-size: 0.8em;
+  margin-top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .faq {
+    width: 100%;
   }
 
-  .copyright{
-    position: absolute;
-    color: white;
-    top: 28px;
-    left: 40%;
+  .text {
+    position: static;
+    top: initial;
+    width: 100%;
   }
 
-  .rek{
-    position: relative;
-    width: fit-content;
-    padding-left: 7%;
-  }
-  .rekomendasi{
-    background-color: white;
-    position: relative;
-    left: 82vh;
-    width: 30vh;
-    height: 40vh;
-
-    border-radius: 10px;
+  .sec-2 {
+    position: sticky;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
   }
 
-  .bg2{
-    position: absolute;
-    top: 180%;
-    width: 150vh;
-
+  .sec-3 {
+    padding: 50px 0;
   }
 
-  .judif{
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-right: 10px;
+  .button {
+    margin: 30px auto auto 0;
   }
 
-  .rekomendasi2{
-    background-color: white;
-    position: absolute;
-    top: 180vh;
-    left: 40vh;
-    width: 30vh;
-    height: 40vh;
+  .shape-left {
+    display: none;
+  }
+}
 
-    border-radius: 10px;
-  }
-  .rekomendasi3{
-    background-color: white;
-    position: absolute;
-    top: 180vh;
-    left: 90vh;
-    width: 30vh;
-    height: 40vh;
 
-    border-radius: 10px;
-  }
-  .rekomendasi4{
-    background-color: white;
-    position: absolute;
-    top: 180vh;
-    left: 130vh;
-    width: 30vh;
-    height: 40vh;
 
-    border-radius: 10px;
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
   }
-  .rekomendasi5{
-    background-color: white;
-    position: absolute;
-    top: 180vh;
-    left: 170vh;
-    width: 30vh;
-    height: 40vh;
 
-    border-radius: 10px;
+  nav div {
+    width: 30%;
   }
-  .mbti
-  {
-    position: absolute;
-    left: 25px;
-    top: 10px;
+
+  nav ul {
+    width: 100%;
   }
-  .sub{
-    padding-top: 250px;
-    text-align: center;
+
+  .daftar {
+    font-size: 0.7em;
   }
+}

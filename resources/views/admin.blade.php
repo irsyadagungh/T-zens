@@ -8,7 +8,28 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+    <?php
+    session_start();
+    $server = 'localhost';
+    $username = 'root';
+    $pass = '';
+    $dbname = 'tzens';
 
+    $conn = mysqli_connect($server, $username, $pass, $dbname);
+
+    if (!$conn) {
+        die('Connection failed : ' . mysqli_connect_error());
+    }
+    $query = "SELECT `nama_acara`, `nama_pengguna` FROM regis_acara";
+    $query2 = "SELECT `nama_organisasi`, `nama_pengguna` FROM regis_organisasi";
+    $result = mysqli_query($conn, $query);
+    $result2 = mysqli_query($conn, $query2);
+
+    if (!$result) {
+        die('Query error: ' . mysqli_error($conn));
+    }
+
+?>
 
   <div class="wrapper">
     <div class="sidebar">
@@ -36,30 +57,43 @@
          </div>
         </div>
         <div class="info">
-          <div class="box-1">
-            <div class="overlay">
-            <h5>Welcome to Admin</h5>
-            <p>Muhammad Wildan Dhiya Ulhaq</p>
-          </div>
+            <div class="box-1">
+              <div class="overlay">
+                <h5>Welcome to Admin</h5>
+                <p>{{session()->get('success')}}</p>
+              </div>
+            </div>
           </div>
           <div class="info2">
-          <div class="box-2">
-            <div class="overlay2">
-              <h5>Apa itu Admin?
-                <br>
-                <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa, expedita aliquam architecto id vel reiciendis enim, ipsa vero, molestiae nostrum rerum. Dicta ipsum doloremque repudiandae ab debitis est quidem!</p>
-              </h5>
+            <div class="box-2">
+                    <table class="tabel" border="1">
+                        <tr>
+                            <th>Nama Acara</th>
+                            <th>Nama Pengguna</th>
+                        </tr>
+                        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                        <tr>
+                            <td><?php echo $row['nama_acara'] ?></td>
+                            <td><?php echo $row['nama_pengguna'] ?></td>
+                        </tr>
+                        <?php endwhile; ?>
+                    </table>
             </div>
-            </div>
+
 
           <div class="box-3">
-          <h5>Motivasi
-                <br>
-                <br>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In culpa, expedita aliquam architecto id vel reiciendis enim, ipsa vero, molestiae nostrum rerum. Dicta ipsum doloremque repudiandae ab debitis est quidem!</p>
-              </h5>
+            <table class="tabel" border="1">
+                <tr>
+                    <th>Nama Organisasi</th>
+                    <th>Nama Pengguna</th>
+                </tr>
+                <?php while ($row = mysqli_fetch_assoc($result2)): ?>
+                <tr>
+                    <td><?php echo $row['nama_organisasi'] ?></td>
+                    <td><?php echo $row['nama_pengguna'] ?></td>
+                </tr>
+                <?php endwhile; ?>
+            </table>
             <div class="overlay3">
 
             </div>

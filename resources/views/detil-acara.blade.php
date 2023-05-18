@@ -34,16 +34,34 @@
                 $query = mysqli_query($conn, 'SELECT * FROM acara');
                 $acara = mysqli_fetch_assoc($query);
 
-                if (isset($_GET['klik'])) {
-                 $id = $_GET['klik'];
+                if (isset($_GET['lihat'])) {
+                 $id = $_GET['lihat'];
                  $query = mysqli_query($conn, "SELECT * FROM acara WHERE id = '$id'");
                 $acara = mysqli_fetch_assoc($query);
                 }
 
         ?>
+    <nav>
+        <div>
+            <img src="{{ asset('assets/pics/tzens-untexted.png') }}" alt="">
+            <h4>T-Zens</h4>
+        </div>
 
+        <ul>
+            <li onclick="window.location.href='{{ url('/') }}'">Home</li>
+            <li class="active" onclick="window.location.href='{{ url('/acara') }}'">Acara</li>
+            <li onclick="window.location.href='{{ url('/organisasi') }}'">Organisasi</li>
+            <li onclick="window.location.href='{{ url('/kontak') }}'">Kontak</li>
+            @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+            <li><a href="{{ route('logout') }}" class="button2 daftar">Logout</a></li>
+            @else
+            <li><button class="button3 daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button></li>
+            @endif
+
+        </ul>
+    </nav>
     <section class="atas">
-        <img src="/assets/pics/v123_21.png" alt="" srcset="" class="logo" />
+
         <div class="main-atas">
             <p class="name-page">Acara / Detail</p>
             <div class="extra-art">
@@ -70,10 +88,14 @@
             </div>
 
             <div class="register">
-                <button type="submit" class="button" onclick="window.location.href='julians.html'" name="submit"
-                    value="submit">
-                    Register Now
-                </button>
+                @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+                <form action="/login/done" method="post">
+                    @csrf
+                <button name="submit" class="button" value="{{$acara['id']}}">Register Now</button>
+            </form>
+                @else
+                <button class="button" onclick="window.location.href='/login/view'">Register Now</button>
+                @endif
             </div>
         </div>
     </section>

@@ -29,20 +29,44 @@
                 $query = mysqli_query($conn, 'SELECT * FROM organisasi');
                 $data= mysqli_fetch_assoc($query);
 
-                if (isset($_GET['klik'])) {
-                 $id = $_GET['klik'];
+                if (isset($_GET['lihat'])) {
+                 $id = $_GET['lihat'];
                  $query = mysqli_query($conn, "SELECT * FROM organisasi WHERE id = '$id'");
                 $data = mysqli_fetch_assoc($query);
                 }
 
         ?>
-    <img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image" class="bg">
+
+<nav>
+    <div>
+        <img src="{{ asset('assets/pics/tzens-untexted.png') }}" alt="">
+        <h4>T-Zens</h4>
+    </div>
+
+    <ul>
+        <li onclick="window.location.href='{{ url('/') }}'">Home</li>
+        <li class="active" onclick="window.location.href='{{ url('/acara') }}'">Acara</li>
+        <li onclick="window.location.href='{{ url('/organisasi') }}'">Organisasi</li>
+        <li onclick="window.location.href='{{ url('/kontak') }}'">Kontak</li>
+        @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+        <li><a href="{{ route('logout') }}" class="button2 daftar">Logout</a></li>
+        @else
+        <li><button class="button3 daftar" onclick="window.location.href='{{ url('/sign-up') }}'">Daftar</button></li>
+        @endif
+
+    </ul>
+</nav>
+<div class="fott">
+<img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image" class="bg bg2">
+</div>
     <section class="sec-2">
+
         <div class="text" name="isi beranda dalam">
             <p class="judif">{{$data['judul_info']}}</p>
             <p>{{$data['info']}}
             </p>
         </div>
+
         <div class="detail">
             <div class="faq">
                 <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Apa itu BEM?</button>
@@ -62,23 +86,17 @@
                     <p>{{$data['jadwal']}}</p>
                     </div>
                 </div>
-            <button class="button" onclick="window.location.href='done.html'">Register Now</button>
-    </section>
-            <section class="sec-3">
-                <div class="rek">
-        <h3>Rekomendasi Organisasi Untukmu</h3>
-    </div>
-    <div class="rekomendasi">
-        <div class="card">
-        <img src="/assets/pics/HIMA-MBTI.png" alt="" class="mbti" name="foto">
-        <h4 class="sub" name="judul">HIMA MBTI</h4>
-        </div>
-    </div>
-    </section>
+                @if  ( \Illuminate\Support\Facades\Session::has('success2'))
+                <form action="/login/done" method="post">
+                    @csrf
+            <button class="button" name="submitt" value="{{$data['id']}}">Register Now</button>
+        </form>
+            @else
+            <button class="button" onclick="window.location.href='/login/view'">Register Now</button>
+            @endif
 
-    <footer>
-        <p class="copyright"> Copyright © 2023 - T-Zens . All Rights Reserved </p>
-    </footer>
+        </section>
+
     <!-- JS -->
     <script>
         var acc = document.getElementsByClassName("accordion");
