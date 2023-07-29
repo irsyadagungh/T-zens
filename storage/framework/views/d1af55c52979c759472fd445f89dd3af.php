@@ -24,7 +24,7 @@
 </head>
 
 <body class="body">
-    <!-- place navbar here -->
+    <!-- navbar -->
     <nav>
         <div>
             <img src="<?php echo e(asset('assets/pics/tzens-untexted.png')); ?>" alt="">
@@ -36,7 +36,12 @@
             <li class="active" onclick="window.location.href='<?php echo e(url('/acara')); ?>'">Acara</li>
             <li onclick="window.location.href='<?php echo e(url('/organisasi')); ?>'">Organisasi</li>
             <li onclick="window.location.href='<?php echo e(url('/kontak')); ?>'">Kontak</li>
-            <li><button class="button daftar" onclick="window.location.href='<?php echo e(url('/sign-up')); ?>'">Daftar</button></li>
+            <?php if( \Illuminate\Support\Facades\Session::has('success2')): ?>
+                <li><a href="<?php echo e(route('logout')); ?>" class="button daftar">Logout</a></li>
+            <?php else: ?>
+             <li><button class="button daftar" onclick="window.location.href='<?php echo e(url('/sign-up')); ?>'">Daftar</button></li>
+            <?php endif; ?>
+
         </ul>
     </nav>
   <main>
@@ -44,13 +49,15 @@
     <!-- Section 1 -->
     <section class="home-1">
         <div data-aos="fade-up" data-aos-duration="1000" class="home-1-teks">
-            <p class="judul1">Halo, Selamat Datang.</p>
+            <p class="judul1">Selamat Datang <span class="sess1"><?php echo e(session()->get('success2')); ?></span></p>
+
+
             <p class="judul2">Temukan Informasi
             yang Anda inginkan disini!</p>
             <p>Tersedia berbagai macam pilihan informasi yang tersedia didalamnya mengenai Acara, Event, dan Organisasi
             di dunia kampus Telkom University.</p>
             <a href="#3"> <button class="button" >Telusuri</button></a>
-          </div>
+        </div>
           <div data-aos="fade-up" data-aos-duration="1800">
               <img class="foto1" src="/assets/pics/pic-landpage.png" alt="">
         </div>
@@ -104,25 +111,6 @@
     </section>
 
     <!-- Section 4 -->
-    <section class="home-4">
-      <div data-aos="fade-up" data-aos-duration="1000" class="testimoni">
-        <img class="pic" src="/assets/pics/testi-1.png" alt="" srcset="">
-        <div class="testi-content">
-          <h6>Testimoni</h6>
-          <p class="testi-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae magni corporis quae iure eveniet laboriosam sapiente, molestias atque, praesentium ipsam illum ea suscipit hic amet? Dicta eaque natus odit eum?</p>
-        </div>
-      </div>
-
-      <div data-aos="fade-up" data-aos-duration="1500" class="testimoni">
-        <img class="pic" src="/assets/pics/testi-2.png" alt="" srcset="">
-        <div class="testi-content">
-          <h6>Testimoni</h6>
-          <p class="testi-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae magni corporis quae iure
-            eveniet laboriosam sapiente, molestias atque, praesentium ipsam illum ea suscipit hic amet? Dicta eaque natus odit
-            eum?</p>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 5 -->
     <section class="home-5">
@@ -132,17 +120,16 @@
       <div class="faq">
       <button data-aos="fade-up" data-aos-duration="1000" class="accordion">Apa itu T-Zens?</button>
       <div class="panel">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Accusantium aliquid adipisci neque distinctio doloremque corporis
-          eveniet debitis vel veritatis consequatur facilis sed suscipit vero iusto at commodi,
-          dolor a officiis!</p>
+        <p>Tzens adalah sebuah web yang dibuatkan untuk mahasiswa telkom university yang
+            berfungsi menyediakan informasi mengenai acara - acara dan keorganisasian di
+            lingkungan Telkom University
+        </p>
       </div>
       <button data-aos="fade-up" data-aos-duration="1500" class="accordion">Apa itu T-Zens?</button>
       <div class="panel">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Accusantium aliquid adipisci neque distinctio doloremque corporis
-          eveniet debitis vel veritatis consequatur facilis sed suscipit vero iusto at commodi,
-          dolor a officiis!</p>
+        <p>Tzens adalah sebuah web yang dibuatkan untuk mahasiswa telkom university yang
+            berfungsi menyediakan informasi mengenai acara - acara dan keorganisasian di
+            lingkungan Telkom University</p>
       </div>
       <button data-aos="fade-up" data-aos-duration="2000" class="accordion">Apa itu T-Zens?</button>
       <div class="panel">

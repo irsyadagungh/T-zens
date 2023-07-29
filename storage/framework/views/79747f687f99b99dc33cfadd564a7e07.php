@@ -9,7 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <style>
@@ -64,35 +64,38 @@
 
 
 
-    <div class="beranda">
-        <div class="col-1">
+    <div  class="beranda">
+        <div data-aos="fade-up" data-aos-duration="1250" class="col-1">
             <h2 class="judul" name="judul beranda">Apa itu Organisasi ?</h2>
             <p class="isi1" name="isi beranda">Organisasi ialah merupakan salah satu perkumpulan orang-orang yang telah di bentuk dalam sebuah kelompok yang mana kelompok atau organisasi ini bertugas untuk saling bekerjasama demi menggapai keberhasilan dan tujuan bersama.
 
                 Arti dari kata organisasi ini adalah bentuk pembagian kerja antar sekelompok orang yang melakukan kerja sama dengan cara tertentu untuk menggapai tujuan dan cita-cita bersama-sama.</p>
         </div>
-        <img src="/assets/pics/organ.png" alt="" class="foto1">
+        <img data-aos="fade-up" data-aos-duration="1500" src="/assets/pics/organ.png" alt="" class="foto1">
     </div>
     <div class="bungkus">
         <?php while ($organisasi = mysqli_fetch_assoc($query)):
 
             $foto = "/assets/pictures/".$organisasi['foto'];
 ?>
-        <div class="kolom" >
+        <div data-aos="fade-up" data-aos-duration="2000" class="kolom" >
             <img src="/assets/pictures/<?php echo $organisasi['foto']; ?>" alt="" class="gmbr1" name="foto organisasi">
             <h3 class="cont" name="judul"> <?php echo e($organisasi['nama']); ?></a> </h3>
 
             <div class="like">
 
                 <form action="/organisasi/detil-organisasi">
-                    <button class="button" type="submit" class="edit" name="lihat" value="<?php echo e($organisasi['id']); ?>">Lihat</button>
+                    <button type="submit" class="edit" name="lihat" value="<?php echo e($organisasi['id']); ?>">Lihat</button>
                 </form>
             </div>
         </div>
         <?php endwhile; ?>
     </div>
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
     <script>
         var icon = document.querySelector(".fa-heart");
         icon.addEventListener("click", function() {

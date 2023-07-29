@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="/assets/css/admin-acara.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Document</title>
@@ -24,11 +26,14 @@
         <!-- ATAS -->
         <div class="main_content">
             <div class="header">
+                <form action="" method="get">
                 <div class="search">
                     <span class="material-symbols-outlined" class="sea">
                         search
                     </span>
-                    <input type="search" placeholder="search" class="search2">
+                    <input name="search" type="search" placeholder="search" class="search2">
+                    <button name="cari" class="ser">Search</button>
+                </form>
                 </div>
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
@@ -61,6 +66,12 @@
     if (!$query) {
         die('Query error: ' . mysqli_error($conn));
     }
+
+    if (isset($_GET['cari'])) {
+                    $nama = $_GET['search'];
+                    $searchQuery = "SELECT * FROM organisasi WHERE nama LIKE '%$nama%'";
+                    $query = mysqli_query($conn, $searchQuery);
+                }
 ?>
 
 <?php while ($organisasi = mysqli_fetch_assoc($query)): ?>
@@ -87,14 +98,15 @@
 </div>
 
 <hr>
+{{-- Query Untuk Menghapus --}}
 <?php endwhile; ?>
 <?php
-if (isset($_GET['hapus'])) {
-$id = $_GET['hapus'];
-$query = mysqli_query($conn, "DELETE FROM `organisasi` WHERE id = $id");
-if ($query) {
-echo "<script>alert('Data berhasil dihapus');</script>";
-echo "<script>window.location.href='/admin/viewOrganisasi';</script>";
+    if (isset($_GET['hapus'])) {
+    $id = $_GET['hapus'];
+    $query = mysqli_query($conn, "DELETE FROM `organisasi` WHERE id = $id");
+    if ($query) {
+    echo "<script>alert('Data berhasil dihapus');</script>";
+    echo "<script>window.location.href='/admin/viewOrganisasi';</script>";
 }
 }
 ?>

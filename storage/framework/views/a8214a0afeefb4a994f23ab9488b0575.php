@@ -111,25 +111,6 @@
     </section>
 
     <!-- Section 4 -->
-    <section class="home-4">
-      <div data-aos="fade-up" data-aos-duration="1000" class="testimoni">
-        <img class="pic" src="/assets/pics/testi-1.png" alt="" srcset="">
-        <div class="testi-content">
-          <h6>Testimoni</h6>
-          <p class="testi-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae magni corporis quae iure eveniet laboriosam sapiente, molestias atque, praesentium ipsam illum ea suscipit hic amet? Dicta eaque natus odit eum?</p>
-        </div>
-      </div>
-
-      <div data-aos="fade-up" data-aos-duration="1500" class="testimoni">
-        <img class="pic" src="/assets/pics/testi-2.png" alt="" srcset="">
-        <div class="testi-content">
-          <h6>Testimoni</h6>
-          <p class="testi-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae magni corporis quae iure
-            eveniet laboriosam sapiente, molestias atque, praesentium ipsam illum ea suscipit hic amet? Dicta eaque natus odit
-            eum?</p>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 5 -->
     <section class="home-5">

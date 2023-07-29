@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +20,7 @@
 
     <?php
 
-        session_start();
+session_start();
                 $server = 'localhost';
                 $username = 'root';
                 $pass = '';
@@ -32,13 +33,20 @@
                 }
 
                 $query = mysqli_query($conn, 'SELECT * FROM acara');
-                $acara = mysqli_fetch_assoc($query);
+                $acara= mysqli_fetch_assoc($query);
 
                 if (isset($_GET['lihat'])) {
                  $id = $_GET['lihat'];
                  $query = mysqli_query($conn, "SELECT * FROM acara WHERE id = '$id'");
                 $acara = mysqli_fetch_assoc($query);
                 }
+
+                if (isset($_GET['submit'])) {
+                    $id = $_GET['submit'];
+                    $query = mysqli_query($conn, "SELECT * FROM acara WHERE id = '$id'");
+                    $acara = mysqli_fetch_assoc($query);
+                }
+
 
         ?>
     <nav>
@@ -88,6 +96,7 @@
             </div>
 
             <div class="register">
+                {{-- INI DIGUNAKAN UNTUK SESSION APAKAH USER LOGIN ATAU TIDAK --}}
                 @if  ( \Illuminate\Support\Facades\Session::has('success2'))
                 <form action="/login/done" method="post">
                     @csrf

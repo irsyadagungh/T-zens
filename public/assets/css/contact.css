@@ -7,7 +7,7 @@ body {
 }
 .contact {
     position: relative;
-    width: 1440px;
+    width: 1519px;
     height: 1024px;
 
     background: #d0eeff;
@@ -17,7 +17,7 @@ body {
     position: absolute;
     width: 1303px;
     height: 844px;
-    left: 67px;
+    left: 120px;
     top: 75px;
 
     background: rgba(246, 246, 246, 0.8);

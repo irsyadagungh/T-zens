@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="/assets/css/admin-acara.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -24,11 +25,14 @@
         <!-- ATAS -->
         <div class="main_content">
             <div class="header">
+                <form action="" method="GET">
                 <div class="search">
                     <span class="material-symbols-outlined" class="sea">
                         search
                     </span>
-                    <input type="search" placeholder="search" class="search2">
+                    <input name="search" type="search" placeholder="search" class="search2">
+                    <button name="cari" class="ser">Search</button>
+                </form>
                 </div>
                 <div class="profile">
                     <img src="/assets/pics/profile.png" alt="">
@@ -49,30 +53,37 @@
                 </div>
 
                 <?php
-    session_start();
-    $server = 'localhost';
-    $username = 'root';
-    $pass = '';
-    $dbname = 'tzens';
+                session_start();
+                $server = 'localhost';
+                $username = 'root';
+                $pass = '';
+                $dbname = 'tzens';
 
-    $conn = mysqli_connect($server, $username, $pass, $dbname);
+                $conn = mysqli_connect($server, $username, $pass, $dbname);
 
-    if (!$conn) {
-        die('Connection failed : ' . mysqli_connect_error());
-    }
+                if (!$conn) {
+                    die('Connection failed : ' . mysqli_connect_error());
+                }
 
-    $query = mysqli_query($conn, 'SELECT * FROM acara');
+                $query = mysqli_query($conn, 'SELECT * FROM acara');
 
-    if (!$query) {
-        die('Query error: ' . mysqli_error($conn));
-    }
-?>
+                if (!$query) {
+                    die('Query error: ' . mysqli_error($conn));
+                }
 
-<?php while ($acara = mysqli_fetch_assoc($query)): ?>
+                if (isset($_GET['cari'])) {
+                    $nama = $_GET['search'];
+                    $searchQuery = "SELECT * FROM acara WHERE nama LIKE '%$nama%'";
+                    $query = mysqli_query($conn, $searchQuery);
+                }
 
-    <?php
-        $foto = "/assets/pictures/".$acara['foto'];
-    ?>
+                ?>
+
+                <?php while ($acara = mysqli_fetch_assoc($query)): ?>
+
+                <?php
+                $foto = "/assets/pictures/".$acara['foto'];
+                ?>
                 <form action="" method="get">
                     @csrf
                     <div class="kolom">

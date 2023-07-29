@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,7 @@
 </head>
 
 <body>
+
     <!-- <img src="../assets/pics/shape4.png" alt="Ellipse 23" class="ellipse-23"> -->
     <div class="background">
         <img class="img" src="../assets/pics/duduk.png" alt="" width="200px" height="">
@@ -38,9 +40,7 @@
                     </div>
                 </div>
 
-                <div class="memiliki2">
-                    <p><a href="<?php echo e(url('/forgot')); ?>"> Lupa Password </a></p>
-                </div>
+
 
                 <div class="memiliki">
                     <p><a href="/sign-up"> Belum memiliki Akun? </a></p>
