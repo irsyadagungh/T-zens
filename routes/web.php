@@ -33,7 +33,7 @@ Route::post('/login/done', [ViewController::class, 'loginDone']);
 
 Route::get('/forgot', [ViewController::class, 'viewForgot']);
 
-Route::get('/forgot/login-forgot', [ViewController::class, 'viewLoginForgot']);
+Route::post('/forgot/login-forgot', [ViewController::class, 'viewLoginForgot']);
 
 Route::get('/organisasi/detil-organisasi', [ViewController::class, 'viewDetilOrganisasi']);
 

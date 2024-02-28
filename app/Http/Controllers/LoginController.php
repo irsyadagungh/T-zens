@@ -63,7 +63,6 @@ class LoginController extends Controller
 
         if (isset($_POST["submit"])) {
             $username = $_POST["username"];
-            $nama = $_POST["nama"];
             $password = addslashes(trim($_POST['password']));
             $query = "SELECT status FROM pengguna WHERE username = '$username'";
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
@@ -79,14 +78,13 @@ class LoginController extends Controller
                     $result2 = mysqli_query($conn, $query);
                     if ($_SESSION["stat"] == 'admin') {
                         Session::put('success', $username);
-                        $_SESSION['nama'] = $row['nama'];
                         return redirect('/dashboard/view');
                     } else {
                         Session::put('success2', $username);
                         // jika error disini
                         $_SESSION['id'] = $row['id'];
                         echo "<script>
-                    alert('Kamu gk masuk');
+                    alert('Kamu berhasil masuk');
                         window.location.href = '/';
                      </script>";
 
@@ -104,6 +102,25 @@ class LoginController extends Controller
                 </script>";
             }
         }
+
+
+        // FORGOT PASS
+
+if(isset($_POST["forgot"])){
+    $email = $_POST["email"];
+    $currentPassword = $_POST["cpassword"];
+    $newPassword = $_POST["password"];
+
+    $result = mysqli_query($conn,"Select * From pengguna WHERE email = '$email'");
+    $row = mysqli_fetch_assoc($result);
+
+    if($currentPassword == $row["password"]){
+        $query2 = "UPDATE pengguna SET password ='$newPassword'  where email='$email' ";
+        $hasil = mysqli_query($conn, $query2);
+        return redirect('/');
+    }
+
+}
 
     }
     public function logout()

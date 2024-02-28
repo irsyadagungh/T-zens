@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +58,7 @@
     </ul>
 </nav>
 <div class="fott">
-<img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image" class="bg bg2">
+<img src="/assets/pictures/<?php echo $data['foto']; ?>" id="chosen-image" class="bg">
 </div>
     <section class="sec-2">
 
