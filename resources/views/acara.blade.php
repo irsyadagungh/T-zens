@@ -108,10 +108,10 @@
                         <p class="type">{{ $acara['tipe_acara'] }}</p>
                         <p>{{ $acara['subscription'] }}</p>
                     </div>
+                    <form class="form" action="/acara/detil-acara" >
+                        <button class="button" type="submit"  name="lihat" value="{{ $acara['id'] }}">Lihat</button>
+                    </form>
                 </div>
-                <form action="/acara/detil-acara" >
-                    <button class="button" type="submit" class="edit" name="lihat" value="{{ $acara['id'] }}">Lihat</button>
-                </form>
             </div>
         <?php endwhile; ?>
     </section>
