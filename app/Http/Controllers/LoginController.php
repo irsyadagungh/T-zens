@@ -65,38 +65,30 @@ class LoginController extends Controller
             $username = $_POST["username"];
             $password = addslashes(trim($_POST['password']));
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
-            if ($username == null and $password == null) {
-                echo "<script>
-                        alert('Username dan Password kosong!');
-                        window.location.href = '/login/view';
-                    </script>";
-            } else if (mysqli_num_rows($result) == 1) {
+
+            if (empty($username) || empty($password)) {
+                $this->redirectWithMessage('/login/view', 'Username dan Password kosong!');
+            }
+
+            if (mysqli_num_rows($result) == 1) {
                 $row = mysqli_fetch_assoc($result);
+
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["stat"] = $row["status"];
+
+
                     if ($_SESSION["stat"] == 'admin') {
-                        Session::put('success', $username);
-                        return redirect('/dashboard/view');
+                        $this->redirectWithMessage('/dashboard/view', 'Login successful', 'success', $username);
                     } else {
-                        Session::put('success2', $username);
-                        // jika error disini
-                        $_SESSION['id'] = $row['id'];
-                        echo "<script>
-                    alert('Kamu berhasil masuk');
-                        window.location.href = '/';
-                     </script>";
+                        $this->redirectWithMessage('/', 'Kamu berhasil masuk', 'success', $username);
                     }
+
+
                 } else {
-                    echo "<script>
-                    alert('Password salah!');
-                    window.location.href = '/login/view';
-                    </script>";
+                    $this->redirectWithMessage('/login', 'Password salah!');
                 }
             } else {
-                echo "<script>
-                alert('Username salah!');
-                window.location.href = '/login/view';
-                </script>";
+                $this->redirectWithMessage('/login', 'Username salah!');
             }
         }
 
@@ -118,7 +110,21 @@ class LoginController extends Controller
             }
 
         }
+    }
 
+    private function redirectWithMessage($url, $message, $type = 'error', $username = null)
+    {
+        if ($type == 'success') {
+            Session::put('success', $username);
+        } elseif ($type == 'success2') {
+            Session::put('success2', $username);
+        }
+
+        echo "<script>
+                alert('$message');
+                window.location.href = '$url';
+            </script>";
+        exit;
     }
 
     public function loginDone()
