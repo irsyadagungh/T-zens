@@ -64,7 +64,6 @@ class LoginController extends Controller
         if (isset($_POST["submit"])) {
             $username = $_POST["username"];
             $password = addslashes(trim($_POST['password']));
-            $query = "SELECT status FROM pengguna WHERE username = '$username'";
             $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
             if ($username == null and $password == null) {
                 echo "<script>
@@ -75,7 +74,6 @@ class LoginController extends Controller
                 $row = mysqli_fetch_assoc($result);
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["stat"] = $row["status"];
-                    $result2 = mysqli_query($conn, $query);
                     if ($_SESSION["stat"] == 'admin') {
                         Session::put('success', $username);
                         return redirect('/dashboard/view');
@@ -87,18 +85,17 @@ class LoginController extends Controller
                     alert('Kamu berhasil masuk');
                         window.location.href = '/';
                      </script>";
-
                     }
                 } else {
                     echo "<script>
-                        alert('Password salah!');
-                        window.location.href = '/login/view';
+                    alert('Password salah!');
+                    window.location.href = '/login/view';
                     </script>";
                 }
             } else {
                 echo "<script>
-                    alert('Username salah!');
-                    window.location.href = '/login/view';
+                alert('Username salah!');
+                window.location.href = '/login/view';
                 </script>";
             }
         }
@@ -106,22 +103,66 @@ class LoginController extends Controller
 
         // FORGOT PASS
 
-if(isset($_POST["forgot"])){
-    $email = $_POST["email"];
-    $currentPassword = $_POST["cpassword"];
-    $newPassword = $_POST["password"];
+        // if (isset($_POST["forgot"])) {
+        //     $email = $_POST["email"];
+        //     $currentPassword = $_POST["cpassword"];
+        //     $newPassword = $_POST["password"];
 
-    $result = mysqli_query($conn,"Select * From pengguna WHERE email = '$email'");
-    $row = mysqli_fetch_assoc($result);
+        //     $result = mysqli_query($conn, "Select * From pengguna WHERE email = '$email'");
+        //     $row = mysqli_fetch_assoc($result);
 
-    if($currentPassword == $row["password"]){
-        $query2 = "UPDATE pengguna SET password ='$newPassword'  where email='$email' ";
-        $hasil = mysqli_query($conn, $query2);
-        return redirect('/');
+        //     if ($currentPassword == $row["password"]) {
+        //         $query2 = "UPDATE pengguna SET password ='$newPassword'  where email='$email' ";
+        //         $hasil = mysqli_query($conn, $query2);
+        //         return redirect('/');
+        //     }
+
+        // }
+
     }
 
-}
+    public function loginDone()
+    {
+        session_start();
+        $server = 'localhost';
+        $username = 'root';
+        $pass = '';
+        $dbname = 'tzens';
 
+        $conn = mysqli_connect($server, $username, $pass, $dbname);
+
+        if (!$conn) {
+            die('Connection failed: ' . mysqli_connect_error());
+        }
+
+        if (isset($_POST['submit'])) {
+            $id_acara = $_POST['submit'];
+            $id_pengguna = $_SESSION['id'];
+
+            $query = "INSERT INTO regis_acara (id_acara, id_pengguna) SELECT acara.id, pengguna.id FROM acara, pengguna WHERE pengguna.id = $id_pengguna AND acara.id = $id_acara";
+
+            $result = mysqli_query($conn, $query);
+
+            if ($result) {
+
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+        if (isset($_POST['submitt'])) {
+            $id_organisasi = $_POST['submitt'];
+            $id_pengguna = $_SESSION['id'];
+
+
+
+            $query = "INSERT INTO regis_organisasi (id_organisasi, id_pengguna) SELECT organisasi.id, pengguna.id FROM organisasi, pengguna WHERE pengguna.id = $id_pengguna AND organisasi.id = $id_organisasi";
+
+            $stmt = mysqli_query($conn, $query);
+
+
+
+        }
+        return view('done');
     }
     public function logout()
     {

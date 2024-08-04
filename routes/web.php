@@ -24,40 +24,80 @@ Route::get('/coba', function () {
     return view('/layouts/detail');
 });
 
+// Sign In
 Route::get('/sign-up', [ViewController::class, 'viewSign']);
 Route::post('/sign-up/add', [LoginController::class, 'add']);
 
-Route::get('/login/view', [ViewController::class, 'viewLogin']);
+// Login
+Route::get('/login', function () {
+    return view('login');
+});
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/login/done', [ViewController::class, 'loginDone']);
+Route::post('/login/done', [LoginController::class, 'loginDone']);
 
-Route::get('/forgot', [ViewController::class, 'viewForgot']);
+// Lupa Password
+Route::get('/forgot', function () {
+    return view('forgot-pass');
+});
+Route::post('/forgot/login-forgot', function () {
+    return view('login-forgot');
+});
 
-Route::post('/forgot/login-forgot', [ViewController::class, 'viewLoginForgot']);
+// Organisasi
+Route::get('/organisasi/detil-organisasi', function () {
+    return view('detil-organisasi');
+});
+Route::get('/organisasi', function () {
+    return view('organisasi');
+});
 
-Route::get('/organisasi/detil-organisasi', [ViewController::class, 'viewDetilOrganisasi']);
+// Acara
+Route::get('/acara', function () {
+    return view('acara');
+});
+Route::get('/acara/detil-acara', function () {
+    return view('detil-acara');
+});
 
-Route::get('/organisasi', [ViewController::class, 'viewOrganisasi']);
+// Admin
+Route::get('/dashboard/view', function () {
+    return view('admin');
+});
 
-Route::get('/acara', [ViewController::class, 'viewAcara']);
+// Kontak
+Route::get('/kontak', function () {
+    return view('contact');
+});
 
-Route::get('/acara/detil-acara', [ViewController::class, 'viewDetilAcara']);
+// Admin Acara
+Route::get('/admin/viewAcara', function () {
+    return view('admin-acara');
+});
+Route::get('/admin/viewAcara/upload', function () {
+    return view('acara-upload');
+});
 
-Route::get('/dashboard/view', [ViewController::class, 'viewAdmin']);
+// Admin Organisasi
+Route::get('/admin/viewOrganisasi/upload', function () {
+    return view('upload-organisasi');
+});
+Route::get('/admin/viewAcara/edit', function () {
+    return view('acara-edit');
+});
+Route::get('/admin/viewOrganisasi', function () {
+    return view('admin-organisasi');
+});
+Route::get('/admin/viewOrganisasi/edit', function () {
+    return view('edit-admin-organisasi');
+});
 
-Route::get('/kontak', [ViewController::class, 'viewContact']);
-Route::get('/admin/viewAcara', [ViewController::class, 'viewAdminAcara']);
-
-Route::get('/admin/viewAcara/upload', [ViewController::class, 'viewAdminAcaraUpload']);
-Route::get('/admin/viewOrganisasi/upload', [ViewController::class, 'uploadOrganisasi']);
-Route::get('/admin/viewAcara/edit', [ViewController::class, 'viewAdminAcaraEdit']);
+// Edit
 Route::post('/admin/viewAcara/edit2', [App\Http\Controllers\AdminController::class, 'editAcara']);
 Route::post('/admin/viewOrganisasi/edit', [App\Http\Controllers\AdminController::class, 'editOrgan']);
 
+// create
 Route::post('/admin/viewAcara/upload/create', [App\Http\Controllers\AdminController::class, 'createAcara']);
 Route::post('/admin/viewOrganisasi/edit/create', [App\Http\Controllers\AdminOrganisasiController::class, 'createOrganisasi']);
-Route::get('/admin/viewOrganisasi', [ViewController::class, 'viewAdminOrganisasi']);
 Route::post('/admin/viewOrganisasi/edit3', [App\Http\Controllers\AdminController::class, 'editOrganisasi']);
 
-Route::get('/admin/viewOrganisasi/edit', [ViewController::class, 'viewAdminOrganisasiEdit']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

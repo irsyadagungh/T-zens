@@ -52,52 +52,7 @@ class ViewController extends Controller
         return view('detil-acara');
     }
 
-    public function loginDone()
-{
-    session_start();
-    $server = 'localhost';
-    $username = 'root';
-    $pass = '';
-    $dbname = 'tzens';
 
-    $conn = mysqli_connect($server, $username, $pass, $dbname);
-
-    if (!$conn) {
-        die('Connection failed: ' . mysqli_connect_error());
-    }
-
-    if (isset($_POST['submit'])) {
-        $id_acara = $_POST['submit'];
-        $id_pengguna = $_SESSION['id'];
-
-        $query = "INSERT INTO regis_acara (id_acara, id_pengguna) SELECT acara.id, pengguna.id FROM acara, pengguna WHERE pengguna.id = $id_pengguna AND acara.id = $id_acara";
-
-        $result = mysqli_query($conn, $query);
-
-        if ($result) {
-
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
-    }
-    if (isset($_POST['submitt'])) {
-        $id_organisasi = $_POST['submitt'];
-        $id_pengguna = $_SESSION['id'];
-
-
-
-        $query = "INSERT INTO regis_organisasi (id_organisasi, id_pengguna) SELECT organisasi.id, pengguna.id FROM organisasi, pengguna WHERE pengguna.id = $id_pengguna AND organisasi.id = $id_organisasi";
-
-        $stmt = mysqli_query($conn, $query);
-
-
-
-    }
-
-
-
-    return view('done');
-}
 
 
     public function viewAdmin()

@@ -102,7 +102,7 @@
                     <p>Saya menyetujui <a href=""> kebijakan kebijakan </a> yang telah dibuat.</p>
                 </div>
                 <div class="memiliki">
-                    <p><a href="/login/view"> Sudah memiliki Akun? </a></p>
+                    <p><a href="/login"> Sudah memiliki Akun? </a></p>
                 </div>
                 <div class="lisensi2">
                     <p class="policy">By clicking “Sign up” button, you are creating a T-Zens account, and you agree to
