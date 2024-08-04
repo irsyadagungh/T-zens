@@ -103,21 +103,21 @@ class LoginController extends Controller
 
         // FORGOT PASS
 
-        // if (isset($_POST["forgot"])) {
-        //     $email = $_POST["email"];
-        //     $currentPassword = $_POST["cpassword"];
-        //     $newPassword = $_POST["password"];
+        if (isset($_POST["forgot"])) {
+            $email = $_POST["email"];
+            $currentPassword = $_POST["cpassword"];
+            $newPassword = $_POST["password"];
 
-        //     $result = mysqli_query($conn, "Select * From pengguna WHERE email = '$email'");
-        //     $row = mysqli_fetch_assoc($result);
+            $result = mysqli_query($conn, "Select * From pengguna WHERE email = '$email'");
+            $row = mysqli_fetch_assoc($result);
 
-        //     if ($currentPassword == $row["password"]) {
-        //         $query2 = "UPDATE pengguna SET password ='$newPassword'  where email='$email' ";
-        //         $hasil = mysqli_query($conn, $query2);
-        //         return redirect('/');
-        //     }
+            if ($currentPassword == $row["password"]) {
+                $query2 = "UPDATE pengguna SET password ='$newPassword'  where email='$email' ";
+                $hasil = mysqli_query($conn, $query2);
+                return redirect('/');
+            }
 
-        // }
+        }
 
     }
 

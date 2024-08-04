@@ -25,7 +25,9 @@ Route::get('/coba', function () {
 });
 
 // Sign In
-Route::get('/sign-up', [ViewController::class, 'viewSign']);
+Route::get('/sign-up', function () {
+    return view('sign-up');
+});
 Route::post('/sign-up/add', [LoginController::class, 'add']);
 
 // Login
